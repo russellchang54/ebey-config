@@ -1,2 +1,2 @@
-# sample-config
-Spring Cloud External Configuration Repository
+# ebey-config
+杭州爱怡康，配置中心
