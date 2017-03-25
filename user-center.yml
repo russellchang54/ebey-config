@@ -4,7 +4,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8778/eureka/
 
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
