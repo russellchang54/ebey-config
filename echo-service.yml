@@ -1,9 +1,9 @@
 server:
-  port: 9098
+  port: 9090
 
 
 
-refreshtest: aek56--------------------------------
+refreshtest: russellchang@qq.com,zj@aek56.com
 #spring:
 #  profiles: test
   
