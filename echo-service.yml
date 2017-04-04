@@ -1,7 +1,7 @@
 server:
   port: 9098
 
-profile: this is a test case
+profile: fucking awesome!
 
 #spring:
 #  profiles: test
