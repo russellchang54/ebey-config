@@ -1,8 +1,9 @@
 server:
   port: 9098
 
-profile: fucking awesome!
 
+
+refreshtest: aek56
 #spring:
 #  profiles: test
   
