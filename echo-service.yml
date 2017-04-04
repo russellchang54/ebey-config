@@ -1,10 +1,23 @@
 server:
-  port: 8090
+  port: 9090
+
+
+
+refreshtest: russellchang@qq.com,zj@aek56.com
+#spring:
+#  profiles: test
   
 eureka:
+  instance: 
+  leaseRenewalIntervalInSeconds: 1
+  leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
       defaultZone: http://localhost:8778/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
       
 ---
 
