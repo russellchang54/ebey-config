@@ -13,7 +13,7 @@ authserver:
     contextPath: userauth
 
 # Note that the "/user" endpoint needs to provide the principle of the logged in user (/me endpoint)
-spring:
+security:
   oauth2:
     resource: 
       userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
