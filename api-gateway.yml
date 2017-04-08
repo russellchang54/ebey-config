@@ -17,8 +17,8 @@ authserver:
 # requests using zuul
 zuul:
   routes:
-    user-webservice: /api/user/**
-    task-webservice: /api/task/**
+    user-center: /api/user/**
+    task-service: /api/task/**
     web-portal: /**
     user: 
       path: /api/loggedinuser/**
