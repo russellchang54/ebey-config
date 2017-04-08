@@ -1,6 +1,6 @@
 # Define the port where the API gateway server would be running
 server:
-  port: 8765
+  port: 18765
 
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
