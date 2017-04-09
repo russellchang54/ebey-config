@@ -1,5 +1,5 @@
 server:
-  port: 19091
+  port: 9091
 
 eureka:
   client:
@@ -19,3 +19,28 @@ zuul:
 management:
   security:
     enabled: false
+    
+ ---
+ 
+ spring:
+  profiles: plain
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://docker:8778/eureka/
+
+zuul:
+  prefix: /api
+#  Uncomment to disable services automatically registering in Zuul
+#  ignoredServices: '*'
+
+  routes:
+    echo-service: /hello/**
+
+
+#management:
+#  security:
+ #   enabled: false
+ server:
+  port: 19091
