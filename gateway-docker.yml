@@ -42,5 +42,5 @@ zuul:
 #management:
 #  security:
  #   enabled: false
- server:
+server:
   port: 19091
