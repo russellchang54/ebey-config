@@ -20,9 +20,9 @@ management:
   security:
     enabled: false
     
- ---
+---
  
- spring:
+spring:
   profiles: docker
   
 eureka:
