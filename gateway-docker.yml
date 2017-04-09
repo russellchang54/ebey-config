@@ -23,7 +23,7 @@ management:
  ---
  
  spring:
-  profiles: plain
+  profiles: docker
   
 eureka:
   client:
