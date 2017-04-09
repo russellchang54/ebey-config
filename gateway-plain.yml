@@ -12,9 +12,9 @@ zuul:
 #  ignoredServices: '*'
 
   routes:
-    echo:
-      path: /echo-service-by-dns/**
-      url: http://echo-service:9098
+    echo-service: /api/hello/**
+  #    path: /echo-service-by-dns/**
+   #   url: http://echo-service:9098
 
 management:
   security:
