@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 9091
 
 eureka:
   client:
@@ -12,7 +12,7 @@ zuul:
 #  ignoredServices: '*'
 
   routes:
-    echo-by-dns:
+    echo:
       path: /echo-service-by-dns/**
       url: http://echo-service:9098
 
