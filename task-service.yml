@@ -21,7 +21,7 @@ security:
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
-      clientId: client
+      clientId: aek56.com
       
 ---
 # task-webservice instance when used on Docker
