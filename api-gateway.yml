@@ -60,6 +60,7 @@ security:
     
 # Datasource and JPA configuration to be used for using the same tokenstore as the authorization server for
 # the defined resource server. Note that there can't be 2 different root nodes, so datasource falls under the "spring" node.
+spring:
   datasource:
     url: jdbc:mysql://localhost:3306/auth
     username: root
