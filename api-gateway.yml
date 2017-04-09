@@ -44,7 +44,7 @@ security:
     sso:
       home:
         secure: false
-        path: /,/**/*.html,/hello
+        path: /,/**/*.html,/hello,/refresh
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
