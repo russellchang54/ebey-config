@@ -4,7 +4,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8778/eureka/
       
 # The OAuth2 server definition that would be used to send the authorization requests to
 authserver:
@@ -13,7 +13,7 @@ authserver:
     contextPath: userauth
 
 # Note that the "/user" endpoint needs to provide the principle of the logged in user (/me endpoint)
-spring:
+security:
   oauth2:
     resource: 
       userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/me
@@ -21,7 +21,7 @@ spring:
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
       userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
-      clientId: client
+      clientId: aek56.com
       
 ---
 # task-webservice instance when used on Docker
