@@ -33,7 +33,7 @@ spring:
 spring:
   profiles: docker
   datasource:
-    url: jdbc:mysql://config-server:3306/auth
+    url: jdbc:mysql://config-center:3306/auth
     username: root
     password: ibase4j
     driver-class: com.mysql.jdbc.Driver
