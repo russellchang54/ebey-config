@@ -19,6 +19,10 @@ eureka:
     lease:
       duration: 5
       
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+      
 ---
 
 # api-gateway instance when used on Docker
