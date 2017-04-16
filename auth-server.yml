@@ -42,18 +42,10 @@ eureka:
       defaultZone: http://192.168.59.103:8761/eureka/
 
 ---
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://register-center:8778/eureka/
+  
 
-security:
-  user:
-    password: password      
-
-# Datasource and JPA configuration to be used for storing the OAuth authorization details 
-# and token store
 spring:
+  profiles: remote
   datasource:
     url: jdbc:mysql://config-server:3306/auth
     username: root
@@ -69,6 +61,19 @@ spring:
   jackson:
     serialization:
       INDENT_OUTPUT: true
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://register-center:8778/eureka/
+
+security:
+  user:
+    password: password      
+
+# Datasource and JPA configuration to be used for storing the OAuth authorization details 
+# and token store
+
     
 jwt:
   header: Authorization
