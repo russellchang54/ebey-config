@@ -69,3 +69,8 @@ jwt:
     authentication:
       path: auth
       refresh: refresh
+      
+      
+server:
+  port: 18899
+  contextPath: /apis 
