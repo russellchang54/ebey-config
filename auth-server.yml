@@ -76,7 +76,7 @@ security:
 
     
 jwt:
-  header: Authorization
+  header: X-AEK56-Token
   secret: aek56.com
   expiration: 604800
   route:
