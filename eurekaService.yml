@@ -21,7 +21,7 @@ eureka:
     registerWithEureka: false   
     fetchRegistry: false    
     serviceUrl:    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
-      defaultZone: http://aek56:aek56123@localhost:19512/eureka/
+      defaultZone: http://aek56:aek56123@registercenter:19512/eureka/
 
 ---
 spring:
@@ -37,4 +37,4 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
-      defaultZone: http://aek56:aek56123@localhost:19511/eureka/
+      defaultZone: http://aek56:aek56123@registercenter:19511/eureka/
