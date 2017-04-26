@@ -1,9 +1,9 @@
 security:
   basic:
-    enabled: true     
-  user:
-    name: aek56      
-    password: aek56123   
+    enabled: false     
+#  user:
+#    name: aek56      
+#    password: aek56123   
 
 
 # 配置三个实例的eureka高可用配置，如果是在swarm集群中服务，请把swarm中我service名称部署为三个，分别为：eurekaServer1,eurekaServer2,eurekaServer3
@@ -21,7 +21,7 @@ eureka:
 #    registerWithEureka: false   
 #    fetchRegistry: false    
     serviceUrl:    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
-      defaultZone: http://aek56:aek56123@registercenter:19512/eureka/
+      defaultZone: http://10.8.4.3:19512/eureka/
 
 ---
 spring:
@@ -37,4 +37,4 @@ eureka:
 #    registerWithEureka: false
 #    fetchRegistry: false
     serviceUrl:    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
-      defaultZone: http://aek56:aek56123@registercenter:19511/eureka/
+      defaultZone: http://10.8.4.3:19511/eureka/
