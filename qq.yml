@@ -11,3 +11,51 @@ security:
     password: aek56123   
 
 
+# 配置三个实例的eureka高可用配置，如果是在swarm集群中服务，请把swarm中我service名称部署为三个，分别为：eurekaServer1,eurekaServer2,eurekaServer3
+---
+spring:
+  profiles: eurekaService1
+server:
+  port: 9511                    
+eureka:
+  instance:
+    hostname: eurekaServer1         
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port} 
+  client:
+    registerWithEureka: false   
+    fetchRegistry: false    
+    serviceUrl:    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
+      defaultZone: http://aek56:aek56123@eurekaServer2:19512/eureka/,http://aek56:aek56123@eurekaServer3:19513/eureka/
+
+---
+spring:
+  profiles: eurekaService2
+server:
+  port: 9512                    
+eureka:
+  instance:
+    hostname: eurekaServer2         
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
+      defaultZone: http://aek56:aek56123@eurekaServer1:9511/eureka/,http://aek56:aek56123@eurekaServer3:9513/eureka/
+
+---
+spring:
+  profiles: eurekaServer3
+server:
+  port: 9513                    
+eureka:
+  instance:
+    hostname: eurekaServer3         
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
+      defaultZone: http://aek56:aek56123@eurekaServer2:9512/eureka/,http://aek56:aek56123@eurekaServer1:9511/eureka/
