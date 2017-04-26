@@ -41,7 +41,7 @@ eureka:
 
 ---
 spring:
-  profiles: eurekaServer3
+  profiles: eurekaService3
 server:
   port: 9513                    
 eureka:
