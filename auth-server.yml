@@ -42,7 +42,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       
   jackson:
     serialization:
