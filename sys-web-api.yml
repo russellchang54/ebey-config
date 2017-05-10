@@ -1,6 +1,6 @@
 spring:
   application:
-    name: syswebapi
+    name: sys-web-api
   session:
     store-type: none
 server:
