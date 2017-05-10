@@ -25,6 +25,15 @@ db:
   maxPoolPreparedStatementPerConnectionSize: 20
 druid: 
   filters: stat
+redis: 
+  host: 192.168.1.57
+  port: 6379
+  minIdle: 5
+  maxIdle: 20
+  maxTotal: 100
+  password: 
+  expiration: 600
+  maxWait: -1
 
 eureka:
   client:
