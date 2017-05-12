@@ -3,6 +3,8 @@ spring:
     name: assets-web-api
   session: 
     store-type: none
+  redis: 
+    host: 192.168.1.57
 server: 
   port: 9090
 db: 
