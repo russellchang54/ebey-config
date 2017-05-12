@@ -1,0 +1,49 @@
+spring: 
+  application: 
+    name: assets-web-api
+  session: 
+    store-type: none
+server: 
+  port: 9090
+db: 
+  driverClassName: com.mysql.jdbc.Driver
+  reader: 
+    url: jdbc:mysql://192.168.1.57:3306/assets?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  writer: 
+    url: jdbc:mysql://192.168.1.57:3306/assets?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  initialSize: 20
+  maxActive: 40
+  maxIdle: 20
+  minIdle: 1
+  maxWaitMillis: 60000
+  timeBetweenEvictionRunsMillis: 3000
+  minEvictableIdleTimeMillis: 300000
+  maxPoolPreparedStatementPerConnectionSize: 20
+druid: 
+  filters: stat
+redis: 
+  database: 1
+  host: 192.168.1.57
+  port: 6379
+  minIdle: 5
+  maxIdle: 20
+  maxTotal: 100
+  password: 
+  expiration: 600
+  maxWait: -1
+
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+  instance:
+    status-page-url-path: /swagger-ui.html
+
+security: 
+  jwt: 
+    secret: k09BQnaF
+    expiration: 604800
