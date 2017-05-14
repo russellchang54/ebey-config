@@ -33,10 +33,21 @@ spring:
 spring:
   profiles: docker
   datasource:
-    url: jdbc:mysql://config-center:3306/auth
+    url: jdbc:mysql://10.8.4.3:3306/auth
     username: root
     password: ibase4j
     driver-class: com.mysql.jdbc.Driver
+  redis:
+    database: 1
+    host: 10.8.4.3
+    #password: # Login password of the redis server.
+    port: 6379
+    timeout: 0
+    pool:
+      max-active: 8 #最大连接数
+      max-idle: 8 #最大空闲连接数
+      max-wait: -1 #最大等待时间
+      min-idle: 0 #初始化连接数      
   
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
@@ -55,20 +66,7 @@ eureka:
 
 security:
   user:
-    password: password      
-    
-spring:
-  redis:
-    database: 1
-    host: config-server
-    #password: # Login password of the redis server.
-    port: 6379
-    timeout: 0
-    pool:
-      max-active: 8 #最大连接数
-      max-idle: 8 #最大空闲连接数
-      max-wait: -1 #最大等待时间
-      min-idle: 0 #初始化连接数    
+    password: password         
 
 # Datasource and JPA configuration to be used for storing the OAuth authorization details 
 # and token store
