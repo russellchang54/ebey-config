@@ -149,7 +149,12 @@ spring:
     testConnection: false
 
 jwt:
-  secret: k09BQnaF
-  expiration: 86400 #7Days
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
 server:
   port: 8085
