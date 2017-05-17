@@ -73,7 +73,7 @@ jwt:
       
 server:
   port: 18899
-  contextPath: /apis 
+#  contextPath: /apis 
   
 ---
   
