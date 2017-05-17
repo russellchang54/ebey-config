@@ -148,6 +148,11 @@ spring:
     password: xxx
     testConnection: false
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+
 jwt:
   header: X-AEK56-Token
   secret: aek56.com
