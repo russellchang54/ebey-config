@@ -81,48 +81,10 @@ spring:
   # DataSource Config
   profiles: dev
   datasource:
-    write:
-      url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-      username: root
-      password: Aek56.com
-      driver-class-name: com.mysql.jdbc.Driver
-      max-active: 20
-      initial-size: 1
-      min-idle: 3
-      max-wait: 60000
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      validation-query: SELECT 'x' FROM DUAL
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-      filters: stat,wall,log4j
-      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
-      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=3000
-      # 合并多个DruidDataSource的监控数据
-      #spring.datasource.useGlobalDataSourceStat=true
-    read:
-      url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-      username: root
-      password: Aek56.com
-      driver-class-name: com.mysql.jdbc.Driver
-      max-active: 20
-      initial-size: 1
-      min-idle: 3
-      max-wait: 60000
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      validation-query: SELECT 'x' FROM DUAL
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-      filters: stat,wall,log4j
-      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
-      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=3000
-      # 合并多个DruidDataSource的监控数据
-      #spring.datasource.useGlobalDataSourceStat=true
+    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: root
+    password: Aek56.com
+    driver-class: com.mysql.jdbc.Driver
   redis:
     database: 3
     host: 192.168.1.57
