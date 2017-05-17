@@ -147,9 +147,9 @@ spring:
     username: aaa@xxx.com
     password: xxx
     testConnection: false
-security:
-  jwt:
-    secret: k09BQnaF
-    expiration: 86400 #7Days
+
+jwt:
+  secret: k09BQnaF
+  expiration: 86400 #7Days
 server:
   port: 8085
