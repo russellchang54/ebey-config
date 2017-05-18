@@ -124,7 +124,7 @@ jwt:
       path: auth
       refresh: refresh
 mybatis:
-  config-location: classpath:mybatis/mybatis-config.xml
+  config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:mybatis/*.xml
   
 server:
