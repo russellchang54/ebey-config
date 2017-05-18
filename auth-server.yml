@@ -42,7 +42,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
     show-sql: false
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
       
   jackson:
     serialization:
@@ -73,7 +73,7 @@ jwt:
       
 server:
   port: 18899
-  contextPath: /apis 
+#  contextPath: /apis 
   
 ---
   
@@ -128,4 +128,5 @@ mybatis:
   mapper-locations: classpath:mybatis/*.xml
   
 server:
+  contextPath: /apis 
   port: 18085

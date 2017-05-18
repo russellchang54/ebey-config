@@ -36,6 +36,7 @@ db:
   maxPoolPreparedStatementPerConnectionSize: 20
 druid: 
   filters: stat
+  logType: log4j2
 redis: 
   host: 192.168.1.57
   port: 6379
