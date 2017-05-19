@@ -80,12 +80,6 @@ server:
 spring:
   # DataSource Config
   profiles: dev
-  level:
-     org:
-      springframework: 
-         security: DEBUG
-     com:
-      aek56: debug
   datasource:
     url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
@@ -136,3 +130,10 @@ mybatis:
 server:
   contextPath: /apis 
   port: 18085
+logging: 
+  level:
+     org:
+      springframework: 
+         security: DEBUG
+     com:
+      aek56: debug
