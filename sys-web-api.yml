@@ -47,10 +47,14 @@ redis:
   expiration: 600
   maxWait: -1
 
-security:
-  jwt:
-    secret: k09BQnaF
-    expiration: 604800 #7Days
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
 
 eureka:
   client:
