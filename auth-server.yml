@@ -123,6 +123,10 @@ jwt:
     authentication:
       path: auth
       refresh: refresh
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mybatis/*.xml
+  
 server:
   contextPath: /apis 
   port: 18085
