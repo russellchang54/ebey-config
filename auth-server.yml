@@ -135,6 +135,6 @@ logging:
      root: WARN
      org:
       springframework: 
-         security: DEBUG
+         security: INFO
      com:
       aek56: debug
