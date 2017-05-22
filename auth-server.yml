@@ -132,9 +132,9 @@ server:
   port: 18085
 logging: 
   level:
-     root: INFO
+     root: WARN
      org:
-      springframework: 
+      springframework: INFO
          security: DEBUG
      com:
       aek56: debug
