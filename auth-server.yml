@@ -133,7 +133,7 @@ server:
 logging: 
   level:
      org:
-      springframework: INFO
+      springframework: 
          security: DEBUG
      com:
       aek56: debug
