@@ -131,6 +131,8 @@ server:
   contextPath: /apis 
   port: 18085
 logging: 
+  path: logs
+  file: auth-server.log
   level:
      root: INFO
      com:
