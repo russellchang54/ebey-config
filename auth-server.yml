@@ -137,5 +137,6 @@ logging:
     console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
   level:
      root: INFO
-     com:
-      aek56: debug
+     com.aek56: debug
+     com.netflix: ERROR
+     com.aek56.microservice.auth.security.JwtAuthenticationTokenFilter: INFO
