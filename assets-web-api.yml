@@ -55,7 +55,11 @@ eureka:
   instance:
     status-page-url-path: /swagger-ui.html
 
-security: 
-  jwt: 
-    secret: k09BQnaF
-    expiration: 604800
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
