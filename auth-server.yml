@@ -139,4 +139,3 @@ logging:
      root: INFO
      com.aek56: debug
      com.netflix: ERROR
-     com.aek56.microservice.auth.security.JwtAuthenticationTokenFilter: INFO
