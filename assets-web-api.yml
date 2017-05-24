@@ -6,7 +6,7 @@ spring:
   redis: 
     host: 192.168.1.57
     port: 6379
-    database: 1
+    database: 0
     timeout: 0
     pool:
       max-active: 8 #最大连接数
@@ -38,7 +38,7 @@ druid:
   filters: stat
   logType: log4j2
 redis: 
-  database: 1
+  database: 0
   host: 192.168.1.57
   port: 6379
   minIdle: 5
