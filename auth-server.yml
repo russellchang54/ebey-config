@@ -134,7 +134,7 @@ logging:
   file: logs/auth-server.log
   pattern:
     file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
-    console: %d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n
+    console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
   level:
      root: INFO
      com:
