@@ -147,4 +147,4 @@ sms:
   url: http://sms.aek56.com/api/
   loginTpl: 49 #短信密码模板
   codeTpl: 4 #验证码模板
-  expire: 300 #默认5分钟
+  expire: 15 #默认15分钟
