@@ -145,6 +145,6 @@ sms:
   authkey: 68fc8c8a5ac2677859e59a213cc4e01e
   psw: WMl9LyA2mpo8izpg
   url: http://sms.aek56.com/api/
-  loginTpl: 47 #短信密码模板
+  loginTpl: 4 #短信密码模板
   codeTpl: 4 #验证码模板
   expire: 300 #默认5分钟
