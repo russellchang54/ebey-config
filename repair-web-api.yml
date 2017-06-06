@@ -15,7 +15,7 @@ spring:
       min-idle: 0 #初始化连接数
 
 server:
-  port: 8090
+  port: 9099
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
