@@ -203,7 +203,7 @@ mybatis:
   
 server:
   contextPath: /apis 
-  port: 18085
+  port: 8085
 
 logging: 
   file: logs/auth-server.log
