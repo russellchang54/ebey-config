@@ -155,7 +155,7 @@ spring:
   # DataSource Config
   profiles: public
   datasource:
-    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/public?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
     password: Aek56.com
     driver-class: com.mysql.jdbc.Driver
