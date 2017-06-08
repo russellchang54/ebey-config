@@ -86,62 +86,7 @@ spring:
     password: Aek56.com
     driver-class: com.mysql.jdbc.Driver
   redis:
-    database: 3
-    host: 192.168.1.57
-    #password: # Login password of the redis server.
-    port: 6379
-    timeout: 0
-    pool:
-      max-active: 8 #最大连接数
-      max-idle: 8 #最大空闲连接数
-      max-wait: -1 #最大等待时间
-      min-idle: 0 #初始化连接数
-
-  rabbitmq:
-    host: svc
-    port: 8091
-    username: guest
-    password: guest
-    virtualHost: /
-  mail:
-    host: xxx
-    port: 25
-    username: aaa@xxx.com
-    password: xxx
-    testConnection: false
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
-
-jwt:
-  header: X-AEK56-Token
-  secret: aek56.com
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
-mybatis:
-  config-location: classpath:mybatis-config.xml
-  mapper-locations: classpath:mybatis/*.xml
-  
-server:
-  contextPath: /apis 
-  port: 18085
-  
----
-spring:
-  # DataSource Config
-  profiles: public
-  datasource:
-    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: root
-    password: Aek56.com
-    driver-class: com.mysql.jdbc.Driver
-  redis:
-    database: 3
+    #database: 3
     host: 192.168.1.57
     #password: # Login password of the redis server.
     port: 6379
@@ -186,5 +131,21 @@ server:
   contextPath: /apis 
   port: 18085
 
-  
-  
+logging: 
+  file: logs/auth-server.log
+  pattern:
+    file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
+    console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
+  level:
+     root: INFO
+     com.aek56: debug
+     com.netflix: ERROR
+
+sms:
+  usr: shebei
+  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
+  psw: WMl9LyA2mpo8izpg
+  url: http://sms.aek56.com/api/
+  loginTpl: 49 #短信密码模板
+  codeTpl: 4 #验证码模板
+  expire: 1 #默认15分钟
