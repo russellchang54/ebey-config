@@ -139,9 +139,9 @@ logging:
     file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
     console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
   level:
-     root: DEBUG
+     root: INFO
      com.aek56: debug
-     com.netflix: DEBUG
+     com.netflix: ERROR
      org:
        springframework:
          security: DEBUG
