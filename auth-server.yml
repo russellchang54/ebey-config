@@ -140,6 +140,9 @@ logging:
      root: INFO
      com.aek56: debug
      com.netflix: ERROR
+     org:
+       springframework:
+         security: DEBUG
 
 sms:
   usr: shebei
