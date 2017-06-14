@@ -111,8 +111,8 @@ spring:
     testConnection: false
 
 eureka:
-  instance:
-    prefer-Ip-Address: true
+  #instance:
+    #prefer-Ip-Address: true
   client:
     serviceUrl:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
