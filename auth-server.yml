@@ -21,10 +21,7 @@ spring:
     username: root
     password: ibase4j
     driver-class: com.mysql.jdbc.Driver
-  cloud:
-    client:
-      hostname: auth-server-dev
-      ipAddress: 192.168.3.134    
+
   
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
@@ -83,12 +80,16 @@ server:
   
 spring:
   # DataSource Config
-  profiles: dev
+  profiles: test
   datasource:
     url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
     password: Aek56.com
     driver-class: com.mysql.jdbc.Driver
+  cloud:
+    client:
+      hostname: auth-server-test
+      ipAddress: 192.168.1.57        
   redis:
     #database: 3
     host: 192.168.1.57
@@ -115,11 +116,14 @@ spring:
     testConnection: false
 
 eureka:
-  #instance:
-    #prefer-Ip-Address: true
+  instance:
+    preferIpAddress: true
+    ip-address: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}    
   client:
     serviceUrl:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+      
 
 jwt:
   header: X-AEK56-Token
@@ -168,6 +172,10 @@ spring:
     username: root
     password: Aek56.com
     driver-class: com.mysql.jdbc.Driver
+  cloud:
+    client:
+      hostname: auth-server-dev
+      ipAddress: 192.168.3.134        
   redis:
     database: 3
     host: 192.168.1.57
