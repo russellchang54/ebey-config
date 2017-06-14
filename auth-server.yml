@@ -21,6 +21,10 @@ spring:
     username: root
     password: ibase4j
     driver-class: com.mysql.jdbc.Driver
+  cloud:
+    client:
+      hostname: auth-server-dev
+      ipAddress: 192.168.3.134    
   
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
@@ -191,8 +195,9 @@ spring:
 
 eureka:
   instance:
-#    preferIpAddress: true
-    ip-address: 192.168.3.134
+    preferIpAddress: true
+    ip-address: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
