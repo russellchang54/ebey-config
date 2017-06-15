@@ -37,16 +37,63 @@ db:
 druid: 
   filters: stat
   logType: log4j2
-redis: 
-  database: 0
-  host: 192.168.1.57
-  port: 6379
-  minIdle: 5
+
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+  instance:
+    status-page-url-path: /swagger-ui.html
+
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+---
+spring: 
+  application: 
+  profiles: test
+    name: assets-web-api
+  session: 
+    store-type: none
+  redis: 
+    host: 192.168.1.57
+    port: 6379
+    database: 1
+    timeout: 0
+    pool:
+      max-active: 8 #最大连接数
+      max-idle: 8 #最大空闲连接数
+      max-wait: -1 #最大等待时间
+      min-idle: 0 #初始化连接数
+
+server: 
+  port: 9090
+db: 
+  driverClassName: com.mysql.jdbc.Driver
+  reader: 
+    url: jdbc:mysql://192.168.1.57:3306/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  writer: 
+    url: jdbc:mysql://192.168.1.57:3306/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  initialSize: 20
+  maxActive: 40
   maxIdle: 20
-  maxTotal: 100
-  password: 
-  expiration: 600
-  maxWait: -1
+  minIdle: 1
+  maxWaitMillis: 60000
+  timeBetweenEvictionRunsMillis: 3000
+  minEvictableIdleTimeMillis: 300000
+  maxPoolPreparedStatementPerConnectionSize: 20
+druid: 
+  filters: stat
+  logType: log4j2
 
 eureka: 
   client: 
