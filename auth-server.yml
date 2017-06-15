@@ -1,33 +1,87 @@
-# We need to setup different context root for the auth server so that we can store separate
-# cookies for both the API gateway as well as the OAuth2 authorization server.
-server:
-  port: 8899
-  contextPath: /apis 
+spring:
+  # DataSource Config
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: root
+    password: Aek56.com
+    driver-class: com.mysql.jdbc.Driver
+  cloud:
+    client:
+      hostname: auth-server-test
+      ipAddress: 192.168.1.57        
+  redis:
+    #database: 0
+    host: 192.168.1.57
+    #password: # Login password of the redis server.
+    port: 6379
+    timeout: 0
+    pool:
+      max-active: 8 #最大连接数
+      max-idle: 8 #最大空闲连接数
+      max-wait: -1 #最大等待时间
+      min-idle: 0 #初始化连接数
+
+  rabbitmq:
+    host: svc
+    port: 8091
+    username: guest
+    password: guest
+    virtualHost: /
+  mail:
+    host: xxx
+    port: 25
+    username: aaa@xxx.com
+    password: xxx
+    testConnection: false
 
 eureka:
+  instance:
+    preferIpAddress: true
+    ip-address: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}    
   client:
     serviceUrl:
-      defaultZone: http://localhost:8778/eureka/
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+      
 
-security:
-  user:
-    password: password      
-
-# Datasource and JPA configuration to be used for storing the OAuth authorization details 
-# and token store
-spring:
-  datasource:
-    url: jdbc:mysql://config-server:3306/auth
-    username: root
-    password: ibase4j
-    driver-class: com.mysql.jdbc.Driver
-
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mybatis/*.xml
   
-  jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
-    show-sql: false
-    hibernate:
-      ddl-auto: create
+server:
+  contextPath: /apis 
+  port: 18085
+
+logging: 
+  file: logs/auth-server.log
+  pattern:
+    file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
+    console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
+  level:
+     root: INFO
+     com.aek56: debug
+     com.netflix: ERROR
+     org:
+       springframework:
+         security: DEBUG
+
+sms:
+  usr: shebei
+  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
+  psw: WMl9LyA2mpo8izpg
+  url: http://sms.aek56.com/api/
+  loginTpl: 49 #短信密码模板
+  codeTpl: 4 #验证码模板
+  expire: 1 #默认15分钟
 
 ---  
 
@@ -82,7 +136,7 @@ spring:
   # DataSource Config
   profiles: test
   datasource:
-    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/sd_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
     password: Aek56.com
     driver-class: com.mysql.jdbc.Driver
@@ -91,7 +145,7 @@ spring:
       hostname: auth-server-test
       ipAddress: 192.168.1.57        
   redis:
-    #database: 3
+    database: 1
     host: 192.168.1.57
     #password: # Login password of the redis server.
     port: 6379

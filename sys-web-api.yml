@@ -40,15 +40,6 @@ db:
 druid: 
   filters: stat
   logType: log4j2
-redis: 
-  host: 192.168.1.57
-  port: 6379
-  minIdle: 5
-  maxIdle: 20
-  maxTotal: 100
-  password: 
-  expiration: 600
-  maxWait: -1
 
 jwt:
   header: X-AEK56-Token
@@ -87,7 +78,7 @@ spring:
   redis: 
     host: 192.168.1.57
     port: 6379
-    database: 0
+    database: 1
     timeout: 0
     pool:
       max-active: 8 #最大连接数
@@ -121,15 +112,6 @@ db:
 druid: 
   filters: stat
   logType: log4j2
-redis: 
-  host: 192.168.1.57
-  port: 6379
-  minIdle: 5
-  maxIdle: 20
-  maxTotal: 100
-  password: 
-  expiration: 600
-  maxWait: -1
 
 jwt:
   header: X-AEK56-Token
