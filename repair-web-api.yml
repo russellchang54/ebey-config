@@ -67,8 +67,8 @@ eureka:
 ---
 
 spring:
-  application:
   profiles: test
+  application:
     name: repair-web-api
   session:
     store-type: none
