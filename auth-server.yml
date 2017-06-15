@@ -64,8 +64,8 @@ server:
 logging: 
   file: logs/auth-server.log
   pattern:
-    file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
-    console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
+    file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
+    console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
   level:
      root: INFO
      com.aek56: debug
@@ -198,8 +198,8 @@ server:
 logging: 
   file: logs/auth-server.log
   pattern:
-    file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
-    console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
+    file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
+    console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
   level:
      root: INFO
      com.aek56: debug
@@ -283,8 +283,8 @@ server:
 logging: 
   file: logs/auth-server.log
   pattern:
-    file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
-    console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M:%L] - %msg%xEx%n"
+    file: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
+    console: "%d{yyyy.MM.dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
   level:
      root: INFO
      com.aek56: debug
