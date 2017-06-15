@@ -14,7 +14,7 @@ spring:
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
 feign:
-  name: consumer-dev
+  name: sys-web-api-dev
   url: http://192.168.1.57:18085/
 
 server:
@@ -86,8 +86,8 @@ spring:
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
 feign:
-  name: consumer-dev
-  url: http://192.168.1.57:18085/
+  name: sys-web-api-test
+  url: http://192.168.1.54:18085/
 
 server:
   port: 8090
