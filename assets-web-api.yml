@@ -55,8 +55,8 @@ jwt:
       refresh: refresh
 ---
 spring: 
-  application: 
   profiles: test
+  application: 
     name: assets-web-api
   session: 
     store-type: none
