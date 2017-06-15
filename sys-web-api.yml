@@ -15,7 +15,7 @@ spring:
       min-idle: 0 #初始化连接数
 feign:
   name: consumer-dev
-  url: http://192.168.1.57:18085/        
+  url: http://192.168.1.57:18085/
 
 server:
   port: 8090
@@ -27,6 +27,87 @@ db:
     password: Aek56.com
   writer: 
     url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  initialSize: 20
+  maxActive: 40
+  maxIdle: 20
+  minIdle: 1
+  maxWaitMillis: 60000
+  timeBetweenEvictionRunsMillis: 3000
+  minEvictableIdleTimeMillis: 300000
+  maxPoolPreparedStatementPerConnectionSize: 20
+druid: 
+  filters: stat
+  logType: log4j2
+redis: 
+  host: 192.168.1.57
+  port: 6379
+  minIdle: 5
+  maxIdle: 20
+  maxTotal: 100
+  password: 
+  expiration: 600
+  maxWait: -1
+
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+sms:
+  usr: shebei
+  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
+  psw: WMl9LyA2mpo8izpg
+  url: http://sms.aek56.com/api/
+  loginTpl: 49 #短信密码模板
+  codeTpl: 4 #验证码模板
+email: 
+  host: smtp.exmail.qq.com
+  name: noreply@aek56.com
+  password: aek.ser639
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+  instance:
+    status-page-url-path: /swagger-ui.html
+
+---
+
+spring:
+  profiles: test
+  application:
+    name: sys-web-api
+  session:
+    store-type: none
+  redis: 
+    host: 192.168.1.57
+    port: 6379
+    database: 0
+    timeout: 0
+    pool:
+      max-active: 8 #最大连接数
+      max-idle: 8 #最大空闲连接数
+      max-wait: -1 #最大等待时间
+      min-idle: 0 #初始化连接数
+feign:
+  name: consumer-dev
+  url: http://192.168.1.57:18085/
+
+server:
+  port: 8090
+db: 
+  driverClassName: com.mysql.jdbc.Driver
+  reader: 
+    url: jdbc:mysql://192.168.1.57:3306/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  writer: 
+    url: jdbc:mysql://192.168.1.57:3306/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   initialSize: 20
