@@ -15,7 +15,7 @@ spring:
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
 feign:
-  name: sys-web-api-dev
+  name: auth-server
   url: http://192.168.1.57:18085/
 
 server:
@@ -87,7 +87,7 @@ spring:
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
 feign:
-  name: sys-web-api-test
+  name: auth-server
   url: http://192.168.1.54:18085/
 
 server:
