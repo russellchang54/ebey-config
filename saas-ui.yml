@@ -1,0 +1,88 @@
+# Define the port where the API gateway server would be running
+server:
+  port: 8765
+
+refreshtest: zj@aek56.com
+
+# Auth-server instance when used on Docker
+spring:
+  profiles: dev
+  cloud:
+    client:
+      hostname: api-getway
+      ipAddress: 192.168.1.53    
+# The OAuth2 server definition that would be used to send the authorization requests to
+authserver:
+    hostname: 192.168.1.57
+    port: 18085
+    contextPath: /apis    
+
+zuul:
+  routes:
+    user-center: /api/user/**
+    task-service: /api/task/**
+    web-portal: /**
+    user: 
+      path: /api/loggedinuser/**
+      stripPrefix: true
+      url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
+# Define the Eureka server that handles service registration
+eureka: 
+  instance:
+    status-page-url-path: /swagger-ui.html
+    preferIpAddress: true
+    ip-address: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.hostname}:${server.port}    
+  client: 
+    serviceUrl: 
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/  
+
+
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh      
+
+security:
+  oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html,/hello,/refresh
+    client:
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
+      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
+      clientId: aek56.com
+      clientSecret: secret
+    resource:
+      jwt: 
+        secret: aek56.com
+
+
+---
+# Auth-server instance when used on Docker
+spring:
+  profiles: docker
+eureka:
+# Register our microservices to Eureka using hostnames in a Docker environment will not work, they will all get 
+# one and the same hostname. Instead we configure them to use its IP address during registration with Eureka.
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://register-center:8761/eureka/
+      
+# The OAuth2 server definition that would be used to send the authorization requests to
+authserver:
+    hostname: authserver
+    port: 8899
+    contextPath: userauth
+    
+# Define the port where the API gateway server would be running. This could always be port 8080
+# since each docker container has it's own IP
+#server:
+#  port: 8080
