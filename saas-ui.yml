@@ -1,8 +1,12 @@
 # Define the port where the API gateway server would be running
 server:
-  port: 8765
+  port: 8080
 
 refreshtest: zj@aek56.com
+
+env:
+  develop: 192.168.1.57
+  test: 192.168.1.54
 
 # Auth-server instance when used on Docker
 spring:
@@ -12,10 +16,20 @@ spring:
       hostname: api-getway
       ipAddress: 192.168.1.53    
 # The OAuth2 server definition that would be used to send the authorization requests to
+
 authserver:
-    hostname: 192.168.1.57
+    hostname: ${develop}
     port: 18085
     contextPath: /apis    
+assetsserver:
+    hostname: ${env.develop}
+    port: 9090
+sys-web:
+    hostname: ${env.develop}
+    port: 8090    
+repair:
+    hostname: ${env.develop}
+    port: 9099    
 
 zuul:
   routes:
@@ -26,6 +40,22 @@ zuul:
       path: /api/loggedinuser/**
       stripPrefix: true
       url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
+    assets:
+      path: /api/assets/**
+      stripPrefix: true
+      url: http://${env.develop}:${assetsserver.port}/assets/
+    auth:
+      path: /api/
+      stripPrefix: true
+      url: http://${env.develop}:${assetsserver.port}/
+    sys-web:
+      path: /api/sys/**
+      stripPrefix: true
+      url: http://${env.develop}:${sys-web.port}/sys/  
+    repair:
+      path: /api/repair/**
+      stripPrefix: true
+      url: http://${env.develop}:${repair.port}/repair/      
 # Define the Eureka server that handles service registration
 eureka: 
   instance:
