@@ -8,7 +8,7 @@ spring:
     driver-class: com.mysql.jdbc.Driver
   cloud:
     client:
-      hostname: auth-server-test
+      hostname: auth-server
       ipAddress: 192.168.1.57        
   redis:
     #database: 0
@@ -142,8 +142,8 @@ spring:
     driver-class: com.mysql.jdbc.Driver
   cloud:
     client:
-      hostname: auth-server-test
-      ipAddress: 192.168.1.57        
+      hostname: auth-server
+      ipAddress: 192.168.1.54        
   redis:
     database: 1
     host: 192.168.1.57
