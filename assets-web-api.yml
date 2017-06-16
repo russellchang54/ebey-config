@@ -44,15 +44,14 @@ druid:
 
 eureka: 
   instance:
+    status-page-url-path: /swagger-ui.html
     preferIpAddress: true
     ip-address: ${spring.cloud.client.ipAddress}
     instance-id: ${spring.cloud.client.hostname}:${server.port}    
   client: 
     serviceUrl: 
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
-  instance:
-    status-page-url-path: /swagger-ui.html
-
+ 
 jwt:
   header: X-AEK56-Token
   secret: aek56.com
