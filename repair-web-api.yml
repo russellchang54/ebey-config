@@ -15,7 +15,7 @@ spring:
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
 feign:
-  name: assets-web-api
+  name: assets-web-api-dev
   url: http://192.168.3.52:9090/
 server:
   port: 9099
