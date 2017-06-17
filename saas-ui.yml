@@ -20,35 +20,38 @@ spring:
 authserver:
     hostname: ${develop}
     port: 18085
-    contextPath: /apis    
+    contextPath: /apis/    
 assetsserver:
     hostname: ${env.develop}
     port: 9090
+    contextPath: /assets/
 sys-web:
     hostname: ${env.develop}
     port: 8090    
+    contextPath: /sys/
 repair:
     hostname: ${env.develop}
     port: 9099    
+    contextPath: /repair/
 
 zuul:
   routes:
     assets:
       path: /api/assets/**
       stripPrefix: true
-      url: http://${env.develop}:${assetsserver.port}/assets/
+      url: http://${env.develop}:${assetsserver.port}${assetsserver.contextPath}
     auth:
       path: /api/**
       stripPrefix: true
-      url: http://${env.develop}:${assetsserver.port}/
+      url: http://${env.develop}:${assetsserver.port}${authserver.contextPath}
     sys-web:
       path: /api/sys/**
       stripPrefix: true
-      url: http://${env.develop}:${sys-web.port}/sys/  
+      url: http://${env.develop}:${sys-web.port}${sys-web.contextPath}
     repair:
       path: /api/repair/**
       stripPrefix: true
-      url: http://${env.develop}:${repair.port}/repair/      
+      url: http://${env.develop}:${repair.port}${repair.contextPath}    
 # Define the Eureka server that handles service registration
 eureka: 
   instance:
