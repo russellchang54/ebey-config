@@ -38,7 +38,7 @@ zuul:
       stripPrefix: true
       url: http://${env.develop}:${assetsserver.port}/assets/
     auth:
-      path: /api/
+      path: /api/**
       stripPrefix: true
       url: http://${env.develop}:${assetsserver.port}/
     sys-web:
