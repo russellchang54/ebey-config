@@ -1,6 +1,6 @@
 # Define the port where the API gateway server would be running
 server:
-  port: 8080
+  port: 18080
 
 refreshtest: zj@aek56.com
 
