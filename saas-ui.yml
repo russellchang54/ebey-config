@@ -5,7 +5,7 @@ server:
 refreshtest: zj@aek56.com
 
 env:
-  develop: 192.168.1.57
+  develop: 192.168.3.134
   test: 192.168.1.54
 
 # Auth-server instance when used on Docker
@@ -14,7 +14,7 @@ spring:
   cloud:
     client:
       hostname: api-getway
-      ipAddress: 192.168.1.53    
+      ipAddress: 192.168.3.134    
 # The OAuth2 server definition that would be used to send the authorization requests to
 
 authserver:
@@ -26,7 +26,7 @@ assetsserver:
     port: 9090
     contextPath: /assets/
 sys-web:
-    hostname: ${env.develop}
+    hostname: 192.168.3.52
     port: 8090    
     contextPath: /sys/
 repair:
