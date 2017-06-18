@@ -5,7 +5,7 @@ server:
 refreshtest: zj@aek56.com
 
 env:
-  develop: 192.168.3.134
+  develop: 192.168.1.57
   test: 192.168.1.54
 
 # Auth-server instance when used on Docker
@@ -18,7 +18,7 @@ spring:
 # The OAuth2 server definition that would be used to send the authorization requests to
 
 authserver:
-    hostname: ${develop}
+    hostname:192.168.3.134
     port: 18085
     contextPath: /apis/    
 assetsserver:
@@ -39,19 +39,19 @@ zuul:
     assets:
       path: /api/assets/**
       stripPrefix: true
-      url: http://${env.develop}:${assetsserver.port}${assetsserver.contextPath}
+      url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
     auth:
       path: /api/api_v3/**
       stripPrefix: true
-      url: http://${env.develop}:${authserver.port}${authserver.contextPath}
+      url: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}
     sys-web:
       path: /api/sys/**
       stripPrefix: true
-      url: http://${env.develop}:${sys-web.port}${sys-web.contextPath}
+      url: http://${sys-web.hostname}:${sys-web.port}${sys-web.contextPath}
     repair:
       path: /api/repair/**
       stripPrefix: true
-      url: http://${env.develop}:${repair.port}${repair.contextPath}    
+      url: http://${repair.hostname}:${repair.port}${repair.contextPath}    
 # Define the Eureka server that handles service registration
 eureka: 
   instance:
