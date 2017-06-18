@@ -41,7 +41,7 @@ zuul:
       stripPrefix: true
       url: http://${env.develop}:${assetsserver.port}${assetsserver.contextPath}
     auth:
-      path: /api_v3/**
+      path: /api/api_v3/**
       stripPrefix: true
       url: http://${env.develop}:${authserver.port}${authserver.contextPath}
     sys-web:
