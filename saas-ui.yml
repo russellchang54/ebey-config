@@ -18,7 +18,7 @@ spring:
 # The OAuth2 server definition that would be used to send the authorization requests to
 
 authserver:
-    hostname:192.168.3.134
+    hostname: 192.168.3.134
     port: 18085
     contextPath: /apis/    
 assetsserver:
