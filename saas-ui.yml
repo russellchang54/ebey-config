@@ -13,7 +13,7 @@ spring:
   profiles: dev
   cloud:
     client:
-      hostname: api-getway
+      hostname: API-Getway
       ipAddress: 192.168.3.134    
 # The OAuth2 server definition that would be used to send the authorization requests to
 
