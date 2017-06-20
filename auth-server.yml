@@ -136,7 +136,7 @@ spring:
   # DataSource Config
   profiles: test
   datasource:
-    url: jdbc:mysql://{pre-test.mysql.hostname}:${pre-test.mysql.port}/sd_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://dev.aek.com:3306/sd_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
     password: Aek56.com
     driver-class: com.mysql.jdbc.Driver
