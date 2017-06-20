@@ -87,11 +87,11 @@ server:
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://${pre-test.mysql.hostname}:${pre-test.mysql.port}/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://dev.aek.com:3306/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   writer: 
-    url: jdbc:mysql://${pre-test.mysql.hostname}:${pre-test.mysql.port}/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://dev.aek.com:3306/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   initialSize: 20
