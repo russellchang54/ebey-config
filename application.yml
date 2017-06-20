@@ -1,27 +1,27 @@
 mail:
   domain: aek56.com
 dev-center:
-   hostname: 192.168.3.134  
+   hostname: zj.aek.com  
 
 pre-test:
   authserver:
-    hostname: 192.168.3.134
+    hostname: ${dev-center.hostname}
     port: 8085
     contextPath: /apis/
   assetsserver:
-    hostname: 192.168.3.134
+    hostname: ${dev-center.hostname}
     port: 9090
     contextPath: /assets/    
   sys-web:
-    hostname: 192.168.3.134
+    hostname: ${dev-center.hostname}
     port: 8090
     contextPath: /sys/
   repair: 
-    hostname: 192.168.3.134
+    hostname: ${dev-center.hostname}
     port: 9099
     contextPath: /repair/
   redis:
-    hostname: 192.168.1.57
+    hostname: dev.aek.com
     port: 6379
     database: 11
     timeout: 0
@@ -29,6 +29,6 @@ pre-test:
     hostname: ${dev-center.hostname}
     port: 80
   mysql:
-    hostname: 192.168.1.57 
+    hostname: dev.aek.com 
     port: 3306
     db: sd_test

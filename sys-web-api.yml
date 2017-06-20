@@ -77,10 +77,10 @@ spring:
   session:
     store-type: none
   redis: 
-    host: 192.168.1.57
-    port: 6379
-    database: 11
-    timeout: 0
+    host: ${pre-test.redis.hostname}
+    port: ${pre-test.redis.port}
+    database: ${pre-test.redis.database}
+    timeout: ${pre-test.redis.timeout}
     pool:
       max-active: 8 #最大连接数
       max-idle: 8 #最大空闲连接数
@@ -88,7 +88,7 @@ spring:
       min-idle: 0 #初始化连接数
 feign:
   name: auth-server
-  url: http://192.168.3.134:8085/
+  url: http://${pre-test.authserver.hostname}:${pre-test.authserver.port}/
 
 server:
   port: 8090
@@ -96,11 +96,11 @@ server:
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://192.168.1.57:3306/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://${pre-test.mysql.hostname}:${pre-test.mysql.port}/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   writer: 
-    url: jdbc:mysql://192.168.1.57:3306/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://${pre-test.mysql.hostname}:${pre-test.mysql.port}/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   initialSize: 20
