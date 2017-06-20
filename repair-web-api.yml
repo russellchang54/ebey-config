@@ -138,3 +138,5 @@ eureka:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
   instance:
     status-page-url-path: /swagger-ui.html
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30      
