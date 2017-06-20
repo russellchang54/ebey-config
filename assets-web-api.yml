@@ -79,8 +79,8 @@ spring:
       min-idle: 0 #初始化连接数
   cloud:
     client:
-      hostname: dev-center
-      ipAddress: 192.168.3.134     
+      hostname: ${dev-center.hostname}
+      ipAddress: 192.168.3.134      
 
 server: 
   port: 9090

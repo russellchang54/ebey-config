@@ -86,6 +86,10 @@ spring:
       max-idle: 8 #最大空闲连接数
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
+  cloud:
+    client:
+      hostname: ${dev-center.hostname}
+      ipAddress: 192.168.3.134    
 feign:
   name: auth-server
   url: http://${pre-test.authserver.hostname}:${pre-test.authserver.port}/
