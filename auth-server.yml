@@ -268,7 +268,7 @@ eureka:
 
 jwt:
   header: X-AEK56-Token
-  secret: aek56.com
+  secret: zj.aek.com
   expiration: 604800
   route:
     authentication:
