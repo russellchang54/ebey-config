@@ -145,4 +145,6 @@ eureka:
   instance:
     status-page-url-path: /swagger-ui.html
     lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30      
+    lease-expiration-duration-in-seconds: 30    
+    ip-address: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.hostname}:${server.port}      
