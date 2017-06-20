@@ -106,9 +106,9 @@ server:
   port: 80
   
 authserver:
-    hostname: 192.168.3.134
-    port: 8085
-    contextPath: /apis/    
+    hostname: ${pre-test.authserver.hostname}
+    port: ${pre-test.authserver.port}
+    contextPath: ${pre-test.authserver.contextPath}    
 assetsserver:
     hostname: 192.168.3.134
     port: 9090
