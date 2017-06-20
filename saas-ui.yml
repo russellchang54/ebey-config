@@ -139,7 +139,8 @@ zuul:
     repair:
       path: /api/repair/**
       stripPrefix: true
-      url: http://${repair.hostname}:${repair.port}${repair.contextPath}    
+      url: http://${repair.hostname}:${repair.port}${repair.contextPath}   
+    sensitiveHeaders: Cookie,Set-Cookie,X-AEK56-Token       
 # Define the Eureka server that handles service registration
 eureka: 
   instance:
