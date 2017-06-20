@@ -45,7 +45,7 @@ eureka:
 spring:
   profiles: eurekaService3
 server:
-  port: 9511                    
+  port: 9513                    
 eureka:
   instance:
 #    hostname: eurekaService1         
@@ -55,13 +55,13 @@ eureka:
 #    registerWithEureka: false   
 #    fetchRegistry: false    
     serviceUrl:    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
-      defaultZone: http://ebey.aek.com:19513/eureka/
+      defaultZone: http://ebey.aek.com:19514/eureka/
 
 ---
 spring:
   profiles: eurekaService4
 server:
-  port: 9512                    
+  port: 9514                    
 eureka:
   instance:
 #    hostname: eurekaServer2         
@@ -71,4 +71,4 @@ eureka:
 #    registerWithEureka: false
 #    fetchRegistry: false
     serviceUrl:    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka ；多个地址可使用 , 分隔。
-      defaultZone: http://ebey.aek.com:19514/eureka/      
+      defaultZone: http://ebey.aek.com:19513/eureka/      
