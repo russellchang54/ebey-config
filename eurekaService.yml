@@ -27,8 +27,12 @@ eureka:
 spring:
   profiles: eurekaService2
 server:
-  port: 9512                    
+  port: 9512              
+  
 eureka:
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 30000
   instance:
 #    hostname: eurekaServer2         
     prefer-ip-address: true
@@ -47,6 +51,9 @@ spring:
 server:
   port: 9513                    
 eureka:
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 30000
   instance:
 #    hostname: eurekaService1         
     prefer-ip-address: true
@@ -63,6 +70,9 @@ spring:
 server:
   port: 9514                    
 eureka:
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 30000
   instance:
 #    hostname: eurekaServer2         
     prefer-ip-address: true
