@@ -143,9 +143,9 @@ spring:
   cloud:
     client:
       hostname: auth-server
-      ipAddress: 192.168.1.54        
+      ipAddress: 192.168.3.134        
   redis:
-    database: 1
+    database: 11
     host: 192.168.1.57
     #password: # Login password of the redis server.
     port: 6379
@@ -193,7 +193,7 @@ mybatis:
   
 server:
   contextPath: /apis 
-  port: 18085
+  port: 8085
 
 logging: 
   file: logs/auth-server.log

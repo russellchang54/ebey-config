@@ -1,14 +1,12 @@
-# Define the port where the API gateway server would be running
-server:
-  port: 8080
+# Auth-server instance when used on Docker
 
 refreshtest: zj@aek56.com
 
 env:
   develop: 192.168.1.57
   test: 192.168.1.54
-
-# Auth-server instance when used on Docker
+  
+  
 spring:
   profiles: dev
   cloud:
@@ -17,6 +15,10 @@ spring:
       ipAddress: 192.168.3.134    
 # The OAuth2 server definition that would be used to send the authorization requests to
 
+# Define the port where the API gateway server would be running
+server:
+  port: 8080
+  
 authserver:
     hostname: 192.168.3.134
     port: 18085
@@ -92,23 +94,84 @@ security:
 ---
 # Auth-server instance when used on Docker
 spring:
-  profiles: docker
-eureka:
-# Register our microservices to Eureka using hostnames in a Docker environment will not work, they will all get 
-# one and the same hostname. Instead we configure them to use its IP address during registration with Eureka.
-  instance:
-    preferIpAddress: true
-  client:
-    serviceUrl:
-      defaultZone: http://register-center:8761/eureka/
-      
+  profiles: test
+  cloud:
+    client:
+      hostname: API-Getway
+      ipAddress: 192.168.3.134    
 # The OAuth2 server definition that would be used to send the authorization requests to
+
+# Define the port where the API gateway server would be running
+server:
+  port: 80
+  
 authserver:
-    hostname: authserver
-    port: 8899
-    contextPath: userauth
-    
-# Define the port where the API gateway server would be running. This could always be port 8080
-# since each docker container has it's own IP
-#server:
-#  port: 8080
+    hostname: 192.168.3.134
+    port: 8085
+    contextPath: /apis/    
+assetsserver:
+    hostname: 192.168.3.134
+    port: 9090
+    contextPath: /assets/
+sys-web:
+    hostname: 192.168.3.134
+    port: 8090    
+    contextPath: /sys/
+repair:
+    hostname: 192.168.3.134
+    port: 9099    
+    contextPath: /repair/
+
+zuul:
+  routes:
+    assets:
+      path: /api/assets/**
+      stripPrefix: true
+      url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
+    auth:
+      path: /api/api_v3/**
+      stripPrefix: true
+      url: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}
+    sys-web:
+      path: /api/sys/**
+      stripPrefix: true
+      url: http://${sys-web.hostname}:${sys-web.port}${sys-web.contextPath}
+    repair:
+      path: /api/repair/**
+      stripPrefix: true
+      url: http://${repair.hostname}:${repair.port}${repair.contextPath}    
+# Define the Eureka server that handles service registration
+eureka: 
+  instance:
+    status-page-url-path: /swagger-ui.html
+    preferIpAddress: true
+    ip-address: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.hostname}:${server.port}    
+  client: 
+    serviceUrl: 
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/  
+
+
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh      
+
+security:
+  oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html,/hello,/refresh
+    client:
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
+      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/authorize
+      clientId: aek56.com
+      clientSecret: secret
+    resource:
+      jwt: 
+        keyValue: aek56.com
