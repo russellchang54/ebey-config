@@ -62,6 +62,7 @@ eureka:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
   instance:
     status-page-url-path: /swagger-ui.html
+    prefer-ip-address: true
 ---
 server:
   port: 8088
@@ -128,3 +129,4 @@ eureka:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
   instance:
     status-page-url-path: /swagger-ui.html
+    prefer-ip-address: true
