@@ -146,7 +146,7 @@ email:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
   instance:
     status-page-url-path: /swagger-ui.html
     lease-renewal-interval-in-seconds: 10
