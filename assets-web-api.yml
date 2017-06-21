@@ -111,6 +111,10 @@ db:
 druid: 
   filters: stat
   logType: log4j2
+  
+feign-sys:
+  name: sys-web-api
+  url: http://192.168.3.134:8090/    
 
 eureka: 
   instance:
