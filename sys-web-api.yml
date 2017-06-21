@@ -19,7 +19,7 @@ feign:
   url: http://192.168.3.134:18085/
 
 server:
-  port: 8090
+  port: 18090
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
