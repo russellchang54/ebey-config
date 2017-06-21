@@ -17,11 +17,13 @@ spring:
   #cloud:
     #client:
       #hostname: assets-web-api-dev
+
       #ipAddress: 192.168.3.52  
 
 feign-sys:
   name: sys-web-api
   url: http://192.168.3.52:8090/      
+
 server: 
   port: 9090
 db: 
