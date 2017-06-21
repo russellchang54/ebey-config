@@ -16,7 +16,7 @@ spring:
       min-idle: 0 #初始化连接数
 feign:
   name: auth-server
-  url: http://192.168.1.57:18085/
+  url: http://192.168.3.134:18085/
 
 server:
   port: 8090
