@@ -12,7 +12,7 @@ spring:
   cloud:
     client:
       hostname: API-Getway
-      ipAddress: 192.168.3.134    
+      ipAddress: ${env.develop}   
 # The OAuth2 server definition that would be used to send the authorization requests to
 
 # Define the port where the API gateway server would be running
@@ -20,19 +20,19 @@ server:
   port: 8081
   
 authserver:
-    hostname: 192.168.3.134
+    hostname: ${env.develop}
     port: 18085
     contextPath: /apis/    
 assetsserver:
-    hostname: 192.168.3.52
+    hostname: ${env.develop}
     port: 9090
     contextPath: /assets/
 sys-web:
-    hostname: 192.168.3.52
+    hostname: ${env.develop}
     port: 8090    
     contextPath: /sys/
 repair:
-    hostname: 192.168.3.91
+    hostname: ${env.develop}
     port: 9099    
     contextPath: /repair/
 
