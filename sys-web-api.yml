@@ -61,6 +61,8 @@ email:
   host: smtp.exmail.qq.com
   name: noreply@aek56.com
   password: aek.ser639
+  redirect:
+    url: http://dev.aek.com
 eureka:
   client:
     serviceUrl:
@@ -138,6 +140,8 @@ email:
   host: smtp.exmail.qq.com
   name: noreply@aek56.com
   password: aek.ser639
+  redirect:
+    url: http://ebey.aek.com
 eureka:
   client:
     serviceUrl:
