@@ -25,11 +25,11 @@ logging:
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://192.168.1.57:3306/supervise?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/supervisor?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   writer: 
-    url: jdbc:mysql://192.168.1.57:3306/supervise?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/supervisor?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   initialSize: 20
@@ -92,11 +92,11 @@ logging:
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://192.168.1.57:3306/supervise_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   writer: 
-    url: jdbc:mysql://192.168.1.57:3306/supervise_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   initialSize: 20
