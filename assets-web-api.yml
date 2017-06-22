@@ -5,7 +5,7 @@ spring:
   session: 
     store-type: none
   redis: 
-    host: 192.168.1.57
+    host: redis.aek.com
     port: 6379
     database: 0
     timeout: 0
@@ -22,20 +22,20 @@ spring:
 
 feign-sys:
   name: sys-web-api
-  url: http://192.168.3.52:8090/      
+  url: http://dev.aek.com:8090/      
 
 server: 
   port: 9090
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://192.168.1.57:3306/assets?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/assets_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev30a
+    password: 16M089
   writer: 
-    url: jdbc:mysql://192.168.1.57:3306/assets?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/assets_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev30a
+    password: 16M089
   initialSize: 20
   maxActive: 40
   maxIdle: 20
