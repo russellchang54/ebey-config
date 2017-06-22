@@ -23,11 +23,11 @@ server:
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6447/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/sd_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: dev101
     password: 16M089
   writer: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: dev101
     password: 16M089
   initialSize: 20
