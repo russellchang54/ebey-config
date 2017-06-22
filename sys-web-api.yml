@@ -5,7 +5,7 @@ spring:
   session:
     store-type: none
   redis: 
-    host: 192.168.1.57
+    host: redis.aek.com
     port: 6379
     database: 0
     timeout: 0
@@ -16,20 +16,20 @@ spring:
       min-idle: 0 #初始化连接数
 feign:
   name: auth-server
-  url: http://192.168.3.134:18085/
+  url: http://dev.aek.com:18085/
 
 server:
   port: 8090
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev101
+    password: 16M089
   writer: 
-    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev101
+    password: 16M089
   initialSize: 20
   maxActive: 40
   maxIdle: 20
