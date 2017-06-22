@@ -2,7 +2,7 @@ spring:
   # DataSource Config
   profiles: dev
   datasource:
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: dev101
     password: 16M089
     driver-class: com.mysql.jdbc.Driver
