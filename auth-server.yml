@@ -224,13 +224,13 @@ spring:
   # DataSource Config
   profiles: public
   datasource:
-    url: jdbc:mysql://192.168.1.57:3306/sd_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/sd_public?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
     password: Aek56.com
     driver-class: com.mysql.jdbc.Driver
   cloud:
     client:
-      hostname: auth-server-dev
+      hostname: auth-server-pub
       ipAddress: 192.168.3.134        
   redis:
     database: 3
@@ -264,7 +264,7 @@ eureka:
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
   client:
     serviceUrl:
-      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
 
 jwt:
   header: X-AEK56-Token
@@ -280,7 +280,7 @@ mybatis:
   
 server:
   contextPath: /apis 
-  port: 8085
+  port: 8127
 
 logging: 
   file: logs/auth-server.log
