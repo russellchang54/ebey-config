@@ -5,7 +5,7 @@ spring:
   session:
     store-type: none
   redis: 
-    host: 192.168.1.57
+    host: redis.aek.com
     port: 6379
     database: 0
     timeout: 0
@@ -16,22 +16,22 @@ spring:
       min-idle: 0 #初始化连接数
 feign-asset:
   name: assets-web-api
-  url: http://192.168.3.52:9090/
+  url: http://dev.aek.com:9090/
 feign-sys:
   name: sys-web-api
-  url: http://192.168.3.52:8090/
+  url: http://dev.aek.com:8090/
 server:
   port: 9099
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://192.168.1.57:3306/repair?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/repair_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev10r
+    password: 16M089
   writer: 
-    url: jdbc:mysql://192.168.1.57:3306/repair?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/repair_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev10r
+    password: 16M089
   initialSize: 20
   maxActive: 40
   maxIdle: 20
