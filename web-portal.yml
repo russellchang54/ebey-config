@@ -1,7 +1,7 @@
 server:
   port: 8080
 
-refreshtest: russellchang@qq.com
+refreshtest: zj@aek.com
   
 eureka:
   client:
