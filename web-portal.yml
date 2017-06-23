@@ -23,5 +23,6 @@ eureka:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
 # Define the port where the web portal server would be running. This could always be port 8080
 # since each docker container has it's own IP
+refreshtest: zj@zhawangju.com
 server:
   port: 18080  
