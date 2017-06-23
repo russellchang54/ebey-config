@@ -6,7 +6,7 @@ refreshtest: zj@aek.com
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8778/eureka/
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
       
 ---
 
@@ -20,8 +20,8 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://192.168.59.103:8761/eureka/
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
 # Define the port where the web portal server would be running. This could always be port 8080
 # since each docker container has it's own IP
 server:
-  port: 8080  
+  port: 18080  
