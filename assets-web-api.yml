@@ -74,10 +74,10 @@ spring:
   session: 
     store-type: none
   redis: 
-    host: ${pre-test.redis.hostname}
-    port: ${pre-test.redis.port}
-    database: ${pre-test.redis.database}
-    timeout: ${pre-test.redis.timeout}
+    host: redis.aek.com
+    port: 6379
+    database: 10
+    timeout: 0
     pool:
       max-active: 8 #最大连接数
       max-idle: 8 #最大空闲连接数
@@ -85,21 +85,21 @@ spring:
       min-idle: 0 #初始化连接数
   cloud:
     client:
-      hostname: ${dev-center.hostname}
-      ipAddress: 192.168.3.134      
+      hostname: ebey.aek.com
+      ipAddress: 192.168.1.54      
 
 server: 
   port: 9090
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://dev.aek.com:3306/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev80a
+    password: 16M089
   writer: 
-    url: jdbc:mysql://dev.aek.com:3306/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev80a
+    password: 16M089
   initialSize: 20
   maxActive: 40
   maxIdle: 20
@@ -114,7 +114,7 @@ druid:
   
 feign-sys:
   name: sys-web-api
-  url: http://192.168.3.134:8090/    
+  url: http://ebey.aek.com:8090/    
 
 eureka: 
   instance:

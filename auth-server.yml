@@ -9,7 +9,7 @@ spring:
   cloud:
     client:
       hostname: auth-server-dev
-      ipAddress: 192.168.1.57        
+      ipAddress: 192.168.1.57      
   redis:
     #database: 0
     host: redis.aek.com
@@ -123,17 +123,17 @@ spring:
   # DataSource Config
   profiles: test
   datasource:
-    url: jdbc:mysql://dev.aek.com:3306/sd_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: dev301
+    password: 16M089
     driver-class: com.mysql.jdbc.Driver
   cloud:
     client:
-      hostname: ${dev-center.hostname}
-      ipAddress: 192.168.3.134  
+      hostname: ebey.aek.com
+      ipAddress: 192.168.1.54  
   redis:
-    database: 11
-    host: 192.168.1.57
+    database: 10
+    host: redis.aek.com
     #password: # Login password of the redis server.
     port: 6379
     timeout: 0

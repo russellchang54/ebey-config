@@ -97,8 +97,8 @@ spring:
   profiles: test
   cloud:
     client:
-      hostname: ${dev-center.hostname}
-      ipAddress: 192.168.3.134    
+      hostname: ebey.aek.com
+      ipAddress: 192.168.1.54    
 # The OAuth2 server definition that would be used to send the authorization requests to
 
 # Define the port where the API gateway server would be running
@@ -106,19 +106,19 @@ server:
   port: 80
   
 authserver:
-    hostname: ${pre-test.authserver.hostname}
-    port: ${pre-test.authserver.port}
-    contextPath: ${pre-test.authserver.contextPath}    
+    hostname: ebey.aek.com
+    port: 8085
+    contextPath: /apis/    
 assetsserver:
-    hostname: ${dev-center.hostname}
+    hostname: ebey.aek.com
     port: 9090
     contextPath: /assets/
 sys-web:
-    hostname: ${dev-center.hostname}
+    hostname: ebey.aek.com
     port: 8090    
     contextPath: /sys/
 repair:
-    hostname: ${dev-center.hostname}
+    hostname: ebey.aek.com
     port: 9099    
     contextPath: /repair/
 

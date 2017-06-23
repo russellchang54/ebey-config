@@ -72,8 +72,8 @@ spring:
   application:
     name: supervisor-web-api
   redis:
-    database: 1
-    host: 192.168.1.57
+    database: 10
+    host: redis.aek.com
     #password: 
     port: 6379
     timeout: 0
@@ -93,13 +93,13 @@ logging:
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://192.168.1.57:3306/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev30s
+    password: 16M089
   writer: 
-    url: jdbc:mysql://192.168.1.57:3306/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: root
-    password: Aek56.com
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev30s
+    password: 16M089
   initialSize: 20
   maxActive: 40
   minIdle: 1
@@ -127,7 +127,7 @@ app:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
   instance:
     status-page-url-path: /swagger-ui.html
     prefer-ip-address: true
