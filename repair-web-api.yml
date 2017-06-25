@@ -1,7 +1,7 @@
 spring:
-  profiles: dev
   application:
-    name: sys-web-api
+    profiles: dev
+    name: repair-web-api
   session:
     store-type: none
   redis: 
@@ -14,20 +14,22 @@ spring:
       max-idle: 8 #最大空闲连接数
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
-feign:
-  name: auth-server
-  url: http://192.168.3.134:18085/
-
+feign-asset:
+  name: assets-web-api
+  url: http://192.168.3.52:9090/
+feign-sys:
+  name: sys-web-api
+  url: http://192.168.3.52:8090/
 server:
-  port: 8090
+  port: 9099
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/repair?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   writer: 
-    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/repair?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   initialSize: 20
@@ -61,8 +63,6 @@ email:
   host: smtp.exmail.qq.com
   name: noreply@aek56.com
   password: aek.ser639
-  redirect:
-    url: http://dev.aek.com
 eureka:
   client:
     serviceUrl:
@@ -75,14 +75,14 @@ eureka:
 spring:
   profiles: test
   application:
-    name: sys-web-api
+    name: repair-web-api
   session:
     store-type: none
   redis: 
-    host: ${pre-test.redis.hostname}
-    port: ${pre-test.redis.port}
-    database: ${pre-test.redis.database}
-    timeout: ${pre-test.redis.timeout}
+    host: 192.168.1.57
+    port: 6379
+    database: 11
+    timeout: 0
     pool:
       max-active: 8 #最大连接数
       max-idle: 8 #最大空闲连接数
@@ -91,22 +91,25 @@ spring:
   cloud:
     client:
       hostname: ${dev-center.hostname}
-      ipAddress: 192.168.3.134    
-feign:
-  name: auth-server
-  url: http://${pre-test.authserver.hostname}:${pre-test.authserver.port}/
-
+      ipAddress: 192.168.3.134  
 server:
-  port: 8090
+  port: 9099
+  
+feign-asset:
+  name: assets-web-api
+  url: http://zj.aek.com:9090/
+feign-sys:
+  name: sys-web-api
+  url: http://zj.aek.com:8090/
   
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://${pre-test.mysql.hostname}:${pre-test.mysql.port}/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/repair_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   writer: 
-    url: jdbc:mysql://${pre-test.mysql.hostname}:${pre-test.mysql.port}/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.57:3306/repair_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: root
     password: Aek56.com
   initialSize: 20
@@ -140,8 +143,6 @@ email:
   host: smtp.exmail.qq.com
   name: noreply@aek56.com
   password: aek.ser639
-  redirect:
-    url: http://ebey.aek.com
 eureka:
   client:
     serviceUrl:
@@ -149,6 +150,6 @@ eureka:
   instance:
     status-page-url-path: /swagger-ui.html
     lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30    
+    lease-expiration-duration-in-seconds: 30  
     ip-address: ${spring.cloud.client.ipAddress}
     instance-id: ${spring.cloud.client.hostname}:${server.port}      

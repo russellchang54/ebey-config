@@ -1,3 +1,34 @@
 mail:
   domain: aek56.com
-  
+dev-center:
+   hostname: zj.aek.com  
+
+pre-test:
+  authserver:
+    hostname: ${dev-center.hostname}
+    port: 8085
+    contextPath: /apis/
+  assetsserver:
+    hostname: ${dev-center.hostname}
+    port: 9090
+    contextPath: /assets/    
+  sys-web:
+    hostname: ${dev-center.hostname}
+    port: 8090
+    contextPath: /sys/
+  repair: 
+    hostname: ${dev-center.hostname}
+    port: 9099
+    contextPath: /repair/
+  redis:
+    hostname: dev.aek.com
+    port: 6379
+    database: 11
+    timeout: 0
+  saas-ui:
+    hostname: ${dev-center.hostname}
+    port: 80
+  mysql:
+    hostname: dev.aek.com 
+    port: 3306
+    db: sd_test
