@@ -60,17 +60,6 @@ assets:
   ribbon: 
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
     listOfServers: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
-zuul:
-    host:
-        connect-timeout-millis: 10000
-        socket-timeout-millis: 60000
-hystrix:
-    command:
-        default:
-            execution:
-                isolation:
-                    thread:
-                        timeoutInMilliseconds: 60000
     
 # Define the Eureka server that handles service registration
 eureka: 
