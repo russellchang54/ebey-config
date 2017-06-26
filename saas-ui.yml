@@ -53,7 +53,14 @@ zuul:
     repair:
       path: /api/repair/**
       stripPrefix: true
-      url: http://${repair.hostname}:${repair.port}${repair.contextPath}    
+      url: http://${repair.hostname}:${repair.port}${repair.contextPath}
+
+# issue MIME type may not contain reserved characters
+assets:
+  ribbon: 
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: httpbin.org:80
+    
 # Define the Eureka server that handles service registration
 eureka: 
   instance:
