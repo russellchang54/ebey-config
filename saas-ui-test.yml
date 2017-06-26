@@ -1,1 +1,199 @@
 
+# Auth-server instance when used on Docker
+
+refreshtest: zj@aek56.com
+
+env:
+  develop: 192.168.3.52
+  test: 192.168.1.54
+  
+  
+spring:
+  profiles: dev
+  cloud:
+    client:
+      hostname: API-Getway
+      ipAddress: ${env.develop}   
+# The OAuth2 server definition that would be used to send the authorization requests to
+
+# Define the port where the API gateway server would be running
+server:
+  port: 8081
+  
+authserver:
+    hostname: ${env.develop}
+    port: 18085
+    contextPath: /apis/    
+assetsserver:
+    hostname: ${env.develop}
+    port: 9090
+    contextPath: /assets/
+sys-web:
+    hostname: ${env.develop}
+    port: 8090    
+    contextPath: /sys/
+repair:
+    hostname: ${env.develop}
+    port: 9099    
+    contextPath: /repair/
+
+zuul:
+  routes:
+    assets:
+      path: /api/assets/**
+      stripPrefix: true
+      url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
+    auth:
+      path: /api/api_v3/**
+      stripPrefix: true
+      url: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}
+    sys-web:
+      path: /api/sys/**
+      stripPrefix: true
+      url: http://${sys-web.hostname}:${sys-web.port}${sys-web.contextPath}
+    repair:
+      path: /api/repair/**
+      stripPrefix: true
+      url: http://${repair.hostname}:${repair.port}${repair.contextPath}
+
+# issue MIME type may not contain reserved characters
+assets:
+  ribbon: 
+    NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
+#zuul:
+ #host:
+  #connect-timeout-millis: 10000
+  #socket-timeout-millis: 60000
+#hystrix:
+ #command:
+  #default:
+   #execution:
+    #isolation:
+     #thread:
+      #timeoutInMilliseconds: 60000
+
+# Define the Eureka server that handles service registration
+eureka: 
+  instance:
+    status-page-url-path: /swagger-ui.html
+    preferIpAddress: true
+    ip-address: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.hostname}:${server.port}    
+  client: 
+    serviceUrl: 
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/  
+
+
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh      
+
+security:
+  oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html,/hello,/refresh
+    client:
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
+      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/authorize
+      clientId: aek56.com
+      clientSecret: secret
+    resource:
+      jwt: 
+        keyValue: aek56.com
+
+
+---
+# Auth-server instance when used on Docker
+spring:
+  profiles: test
+  cloud:
+    client:
+      hostname: ebey.aek.com
+      ipAddress: 192.168.1.54    
+# The OAuth2 server definition that would be used to send the authorization requests to
+
+# Define the port where the API gateway server would be running
+server:
+  port: 80
+  
+authserver:
+    hostname: ebey.aek.com
+    port: 8085
+    contextPath: /apis/    
+assetsserver:
+    hostname: ebey.aek.com
+    port: 9090
+    contextPath: /assets/
+sys-web:
+    hostname: ebey.aek.com
+    port: 8090    
+    contextPath: /sys/
+repair:
+    hostname: ebey.aek.com
+    port: 9099    
+    contextPath: /repair/
+
+zuul:
+  routes:
+    assets:
+      path: /api/assets/**
+      stripPrefix: true
+      url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
+    auth:
+      path: /api/api_v3/**
+      stripPrefix: true
+      url: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}
+    sys-web:
+      path: /api/sys/**
+      stripPrefix: true
+      url: http://${sys-web.hostname}:${sys-web.port}${sys-web.contextPath}
+    repair:
+      path: /api/repair/**
+      stripPrefix: true
+      url: http://${repair.hostname}:${repair.port}${repair.contextPath}   
+    sensitiveHeaders: Cookie,Set-Cookie,X-AEK56-Token       
+# Define the Eureka server that handles service registration
+eureka: 
+  instance:
+    status-page-url-path: /swagger-ui.html
+    preferIpAddress: true
+    ip-address: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.hostname}:${server.port}    
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30      
+  client: 
+    serviceUrl: 
+      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/ 
+
+
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh      
+
+security:
+  oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html,/hello,/refresh
+    client:
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
+      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/authorize
+      clientId: aek56.com
+      clientSecret: secret
+    resource:
+      jwt: 
+        keyValue: aek56.com
