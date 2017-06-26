@@ -41,7 +41,7 @@ zuul:
     assets:
       path: /api/assets/**
       stripPrefix: true
-      url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
+      #url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
     auth:
       path: /api/api_v3/**
       stripPrefix: true
@@ -59,7 +59,7 @@ zuul:
 assets:
   ribbon: 
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-    listOfServers: httpbin.org:80
+    listOfServers: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
     
 # Define the Eureka server that handles service registration
 eureka: 
