@@ -57,10 +57,10 @@ zuul:
       url: http://${repair.hostname}:${repair.port}${repair.contextPath}
       
 # issue MIME type may not contain reserved characters
-zuul:
- SimpleHostRoutingFilter:
-  post:
-   disable: true
+#zuul:
+ #SimpleHostRoutingFilter:
+  #post:
+   #disable: true
 assets:
   ribbon: 
     NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
