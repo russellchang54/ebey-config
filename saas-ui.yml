@@ -41,7 +41,7 @@ zuul:
     assets:
       path: /api/assets/**
       stripPrefix: true
-      #url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
+      url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
     auth:
       path: /api/api_v3/**
       stripPrefix: true
