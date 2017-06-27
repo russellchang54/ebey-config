@@ -53,7 +53,8 @@ zuul:
     repair:
       path: /api/repair/**
       stripPrefix: true
-      url: http://${repair.hostname}:${repair.port}${repair.contextPath}  
+      url: http://${repair.hostname}:${repair.port}${repair.contextPath}
+    servlet-path: /zuul      
   max:
     host:
       connections: 500
@@ -77,7 +78,7 @@ ribbon:
   MaxAutoRetries: 2
   MaxAutoRetriesNextServer: 1
   eureka:
-    enabled: false      
+    enabled: true      
 
 # Define the Eureka server that handles service registration
 eureka: 
@@ -165,7 +166,32 @@ zuul:
       path: /api/repair/**
       stripPrefix: true
       url: http://${repair.hostname}:${repair.port}${repair.contextPath}   
-    sensitiveHeaders: Cookie,Set-Cookie,X-AEK56-Token       
+    sensitiveHeaders: Cookie,Set-Cookie,X-AEK56-Token      
+    servlet-path: /zuul    
+  max:
+    host:
+      connections: 500
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000       
+    
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000     
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  MaxAutoRetries: 2
+  MaxAutoRetriesNextServer: 1
+  eureka:
+    enabled: true          
 # Define the Eureka server that handles service registration
 eureka: 
   instance:
@@ -178,8 +204,7 @@ eureka:
   client: 
     serviceUrl: 
       defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/ 
-
-
+      
 jwt:
   header: X-AEK56-Token
   secret: aek56.com
