@@ -55,6 +55,7 @@ app:
   default-page-size: 30
   redis-key-prefix: supervisor
   static-file: .css,.js,.png,.jpg,.gif,.jpeg,.bmp,.ico,.swf,.psd,.htc,.htm,.html,.crx,.xpi,.exe,.ipa,.apk
+  context-path:${server.context-path}
 #  userfiles-base-dir: 
 #  projectPath: 
 eureka:
@@ -122,6 +123,7 @@ app:
   default-page-size: 30
   redis-key-prefix: supervisor
   static-file: .css,.js,.png,.jpg,.gif,.jpeg,.bmp,.ico,.swf,.psd,.htc,.htm,.html,.crx,.xpi,.exe,.ipa,.apk
+  context-path:${server.context-path}
 #  userfiles-base-dir: 
 #  projectPath: 
 eureka:
