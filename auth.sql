@@ -13,7 +13,7 @@ CREATE TABLE `ClientDetails` (
   `additionalInformation` varchar(4096) DEFAULT NULL,
   `autoApproveScopes` VARCHAR(255),
   PRIMARY KEY (`appId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8;
+) ENGINE=InnoDB;
 
 
 
@@ -23,7 +23,7 @@ CREATE TABLE `authorities` (
   `username` varchar(50) NOT NULL,
   `authority` varchar(50) NOT NULL,
   UNIQUE KEY `ix_auth_username` (`username`,`authority`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8;
+) ENGINE=InnoDB;
 
 
 
@@ -36,7 +36,7 @@ CREATE TABLE `oauth_access_token` (
   `client_id` varchar(256) DEFAULT NULL,
   `authentication` blob,
   `refresh_token` varchar(256) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8;
+) ENGINE=InnoDB;
 
 
 
@@ -54,7 +54,7 @@ CREATE TABLE `oauth_client_details` (
   `additional_information` varchar(4096) DEFAULT NULL,
   `autoapprove` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`client_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8;
+) ENGINE=InnoDB;
 
 
 
@@ -62,7 +62,7 @@ DROP TABLE IF EXISTS `oauth_code`;
 CREATE TABLE `oauth_code` (
   `code` varchar(256) DEFAULT NULL,
   `authentication` blob
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8;
+) ENGINE=InnoDB;
 
 
 DROP TABLE IF EXISTS `oauth_refresh_token`;
@@ -70,7 +70,7 @@ CREATE TABLE `oauth_refresh_token` (
   `token_id` varchar(256) DEFAULT NULL,
   `token` blob,
   `authentication` blob
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8;
+) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -78,7 +78,7 @@ CREATE TABLE `users` (
   `password` varchar(50) NOT NULL,
   `enabled` tinyint(1) NOT NULL,
   PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf-8;
+) ENGINE=InnoDB;
 
 create table if not exists oauth_approvals (
 	userId VARCHAR(255),
