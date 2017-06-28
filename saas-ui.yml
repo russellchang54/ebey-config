@@ -9,10 +9,10 @@ env:
   
 spring:
   profiles: dev
-  cloud:
-    client:
-      hostname: API-Getway
-      ipAddress: ${env.develop}   
+#  cloud:
+#    client:
+#      hostname: API-Getway
+#      ipAddress: ${env.develop}   
 # The OAuth2 server definition that would be used to send the authorization requests to
 
 # Define the port where the API gateway server would be running
