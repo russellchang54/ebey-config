@@ -22,7 +22,7 @@ feign-assets:
   url: http://dev.aek.com:9090/
 
 server:
-  port: 8090
+  port: 8082
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
@@ -102,7 +102,7 @@ feign-assets:
   name: assets-web-api
   url: http://ebey.aek.com:9090/
 server:
-  port: 8090
+  port: 8082
   
 db: 
   driverClassName: com.mysql.jdbc.Driver
