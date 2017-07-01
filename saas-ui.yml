@@ -35,6 +35,10 @@ repair:
     hostname: ${env.develop}
     port: 9099    
     contextPath: /repair/
+fileserver:
+    hostname: ${env.develop}
+    port: 8087    
+    contextPath: /upload/
 
 zuul:
   routes:
@@ -54,6 +58,10 @@ zuul:
       path: /api/repair/**
       stripPrefix: true
       url: http://${repair.hostname}:${repair.port}${repair.contextPath}
+    fileserver:
+      path: /api/upload/**
+      stripPrefix: true
+      url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
     servlet-path: /zuul      
   max:
     host:
@@ -147,7 +155,10 @@ repair:
     hostname: ebey.aek.com
     port: 9099    
     contextPath: /repair/
-
+fileserver:
+    hostname: ebey.aek.com
+    port: 8087    
+    contextPath: /upload/
 zuul:
   routes:
     assets:
@@ -165,7 +176,11 @@ zuul:
     repair:
       path: /api/repair/**
       stripPrefix: true
-      url: http://${repair.hostname}:${repair.port}${repair.contextPath}   
+      url: http://${repair.hostname}:${repair.port}${repair.contextPath}
+    fileserver:
+      path: /api/upload/**
+      stripPrefix: true
+      url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
     sensitiveHeaders: Cookie,Set-Cookie,X-AEK56-Token      
     servlet-path: /zuul    
   max:
