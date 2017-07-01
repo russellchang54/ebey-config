@@ -129,7 +129,7 @@ spring:
 
 # Define the port where the API gateway server would be running
 server:
-  port: 80
+  port: 8081
   
 authserver:
     hostname: ebey.aek.com
