@@ -22,7 +22,10 @@ spring:
 
 feign-sys:
   name: sys-web-api
-  url: http://dev.aek.com:8090/      
+  url: http://dev.aek.com:8090/
+feign-filterserver:
+  name: aek-fileserver-api
+  url: http://dev.aek.com:8087/
 
 server: 
   port: 9090
@@ -111,10 +114,13 @@ db:
 druid: 
   filters: stat
   logType: log4j2
-  
+
 feign-sys:
   name: sys-web-api
-  url: http://ebey.aek.com:8090/    
+  url: http://ebey.aek.com:8090/
+feign-filterserver:
+  name: aek-fileserver-api
+  url: http://ebey.aek.com:8087/
 
 eureka: 
   instance:
