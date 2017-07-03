@@ -158,7 +158,7 @@ repair:
 fileserver:
     hostname: ebey.aek.com
     port: 8087    
-    contextPath: /upload/
+    contextPath: 
 zuul:
   routes:
     assets:
