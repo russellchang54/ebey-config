@@ -38,7 +38,7 @@ repair:
 fileserver:
     hostname: ${env.develop}
     port: 8087    
-    contextPath: /upload/
+    contextPath: 
 
 zuul:
   routes:
