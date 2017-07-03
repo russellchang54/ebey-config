@@ -73,8 +73,7 @@ zuul:
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000          
-  add-host-header: true
-  sensitive-headers: 
+
 hystrix:
   command:
     default:
@@ -198,8 +197,6 @@ zuul:
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000
-  add-host-header: true
-  sensitive-headers: 
     
 hystrix:
   command:
