@@ -38,7 +38,7 @@ repair:
 fileserver:
     hostname: ${env.develop}
     port: 8087    
-    contextPath: 
+    contextPath: /
 
 zuul:
   routes:
@@ -162,7 +162,7 @@ repair:
 fileserver:
     hostname: ebey.aek.com
     port: 8087    
-    contextPath: 
+    contextPath: /
 zuul:
   routes:
     assets:
