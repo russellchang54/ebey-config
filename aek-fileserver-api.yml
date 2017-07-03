@@ -12,7 +12,7 @@ spring:
     - file:${file.path}
 
 file:
-  path: static/
+  path: file/
 
 eureka: 
   instance:
@@ -36,7 +36,7 @@ spring:
     - file:${file.path}
 
 file:
-  path: static/
+  path: file/
 
 eureka: 
   instance:
