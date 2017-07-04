@@ -62,10 +62,7 @@ zuul:
       path: /api/upload/**
       stripPrefix: true
       url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
-    browserfile:
-      path: /api/file/**
-      stripPrefix: true
-      url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
+
     servlet-path: /zuul      
   max:
     host:
@@ -185,10 +182,7 @@ zuul:
       path: /api/upload/**
       stripPrefix: true
       url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
-    browserfile:
-      path: /api/file/**
-      stripPrefix: true
-      url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
+
     sensitiveHeaders: Cookie,Set-Cookie,X-AEK56-Token      
     servlet-path: /zuul    
   max:
