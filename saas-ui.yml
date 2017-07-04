@@ -3,8 +3,8 @@
 refreshtest: zj@aek56.com
 
 env:
-  develop: 192.168.1.57
-  test: 192.168.1.54
+  develop: dev.aek.com
+  test: ebey.aek.com
   
   
 spring:
