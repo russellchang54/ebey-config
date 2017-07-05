@@ -93,7 +93,7 @@ management:
   enabled: false
 server:
  tomcat:
-  uri-encoding: UTF-8
+  uri-encoding: GBK
   
 # Define the Eureka server that handles service registration
 eureka: 
