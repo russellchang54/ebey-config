@@ -90,7 +90,7 @@ ribbon:
     enabled: false      
 management:
  security:
-  enabled: true
+  enabled: false
   
 # Define the Eureka server that handles service registration
 eureka: 
