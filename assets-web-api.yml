@@ -26,6 +26,9 @@ feign-sys:
 feign-filterserver:
   name: aek-fileserver-api
   url: http://dev.aek.com:8087/
+feign-saasui: 
+  name: saas-ui
+  url: http://dev.aek.com:8081/
 
 server: 
   port: 9090
@@ -121,6 +124,9 @@ feign-sys:
 feign-filterserver:
   name: aek-fileserver-api
   url: http://ebey.aek.com:8087/
+feign-saasui: 
+  name: saas-ui
+  url: http://ebey.aek.com:8081/
 
 eureka: 
   instance:
