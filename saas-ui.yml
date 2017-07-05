@@ -91,6 +91,9 @@ ribbon:
 management:
  security:
   enabled: false
+server:
+ tomcat:
+  uri-encoding: UTF-8
   
 # Define the Eureka server that handles service registration
 eureka: 
