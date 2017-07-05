@@ -91,6 +91,7 @@ ribbon:
   eureka:
     enabled: true      
 management:
+ add-application-context-header: false
  security:
   enabled: false
   
