@@ -18,6 +18,8 @@ spring:
 # Define the port where the API gateway server would be running
 server:
   port: 8081
+  tomcat:
+   uri-encoding: UTF-8
   
 authserver:
     hostname: ${env.develop}
@@ -87,13 +89,10 @@ ribbon:
   MaxAutoRetries: 2
   MaxAutoRetriesNextServer: 1
   eureka:
-    enabled: false      
+    enabled: true      
 management:
  security:
   enabled: false
-server:
- tomcat:
-  uri-encoding: GBK
   
 # Define the Eureka server that handles service registration
 eureka: 
