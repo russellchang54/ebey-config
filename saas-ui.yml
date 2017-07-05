@@ -87,8 +87,11 @@ ribbon:
   MaxAutoRetries: 2
   MaxAutoRetriesNextServer: 1
   eureka:
-    enabled: true      
-
+    enabled: false      
+management:
+ security:
+  enabled: false
+  
 # Define the Eureka server that handles service registration
 eureka: 
   instance:
