@@ -75,7 +75,7 @@ zuul:
   sensitiveHeader: X-AEK56-Token   
   SendResponseFilter:
     post:
-      disable: true
+      disable: false
   
 
 hystrix:
