@@ -18,9 +18,11 @@ spring:
 # Define the port where the API gateway server would be running
 server:
   port: 8081
-  tomcat:
-   uri-encoding: UTF-8
   
+gateway:
+ hostname: dev.aek.com
+ port: 8081
+ contextPath: /
 authserver:
     hostname: ${env.develop}
     port: 18085
@@ -153,7 +155,10 @@ spring:
 # Define the port where the API gateway server would be running
 server:
   port: 8081
-  
+gateway:
+ hostname: ebey.aek.com
+ port: 8081
+ contextPath: /  
 authserver:
     hostname: ebey.aek.com
     port: 8085
