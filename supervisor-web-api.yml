@@ -48,6 +48,9 @@ jwt:
   secret: aek56.com
   expiration: 604800
 
+feign-sys:
+  name: sys-web-api
+  url: http://dev.aek.com:8090/
 app:
   frontPath: /f
   adminPath: /a
@@ -116,6 +119,9 @@ jwt:
   secret: aek56.com
   expiration: 604800
 
+feign-sys:
+  name: sys-web-api
+  url: http://ebey.aek.com:8090/
 app:
   frontPath: /f
   adminPath: /a
