@@ -3,8 +3,8 @@ spring:
   profiles: test
   datasource:
     url: jdbc:mysql://dev.aek.com:3306/sd_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: root
-    password: Aek56.com
+    username: '{cipher}b7d568713989ead204362a45acb1f58892d5e06ee2d95d39553026c26a01da24'
+    password: '{cipher}e964697ac944a108ffcab4017458364ba435e4865482e19f88fda1751a39e4a0'
     driver-class: com.mysql.jdbc.Driver
   cloud:
     client:
