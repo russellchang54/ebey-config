@@ -19,7 +19,7 @@ eureka:
     client:
         service-url:
 #            defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
-            defaultZone:  http://dev.aek.com:8761/eureka/
+            defaultZone:  http://admin:admin@dev.aek.com:8761/eureka/
 
 spring:
     profiles:
