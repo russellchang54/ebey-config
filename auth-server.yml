@@ -165,7 +165,7 @@ eureka:
     lease-expiration-duration-in-seconds: 30    
   client:
     serviceUrl:
-      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
+      defaultZone: http://192.168.3.102:8761/eureka/
       
 
 jwt:
