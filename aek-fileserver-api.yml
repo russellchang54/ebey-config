@@ -1,0 +1,47 @@
+server:
+  port: 8087
+spring:
+  profiles: dev
+  application:
+    name: aek-fileserver-api
+  http:
+    multipart:
+      max-file-size: 10MB
+  resources: 
+    static-locations:
+    - file:${file.path}
+
+file:
+  path: file/
+
+eureka: 
+  instance:
+    status-page-url-path: /swagger-ui.html
+    preferIpAddress: true 
+  client: 
+    serviceUrl: 
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+---
+server:
+  port: 8087
+spring:
+  profiles: test
+  application:
+    name: aek-fileserver-api
+  http:
+    multipart:
+      max-file-size: 10MB
+  resources: 
+    static-locations:
+    - file:${file.path}
+
+file:
+  path: file/
+
+eureka: 
+  instance:
+    status-page-url-path: /swagger-ui.html
+    preferIpAddress: true
+  client: 
+    serviceUrl: 
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/

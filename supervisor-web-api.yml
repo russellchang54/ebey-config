@@ -1,0 +1,141 @@
+server:
+  port: 8088
+spring:
+  profiles: dev
+  application:
+    name: supervisor-web-api
+  redis:
+    #database: 0
+    host: redis.aek.com
+    #password: 
+    port: 6379
+    timeout: 0
+  http:
+    multipart:
+      max-file-size: 10MB
+mybatis: 
+  mapper-locations:
+  - classpath:/mappings/**/*.xml
+  type-aliases-package: com.aek.ebey.supervisor
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    call-setters-on-nulls: true
+
+logging:
+  config: classpath:log4j2.xml
+db: 
+  driverClassName: com.mysql.jdbc.Driver
+  reader: 
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/supervisor_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev10s
+    password: 16M089
+  writer: 
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/supervisor_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev10s
+    password: 16M089
+  initialSize: 20
+  maxActive: 40
+  minIdle: 1
+  maxWaitMillis: 60000
+  timeBetweenEvictionRunsMillis: 3000
+  minEvictableIdleTimeMillis: 300000
+  maxPoolPreparedStatementPerConnectionSize: 20
+druid: 
+  filters: stat
+  logType: log4j2
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+
+feign-sys:
+  name: sys-web-api
+  url: http://dev.aek.com:8090/
+app:
+  frontPath: /f
+  adminPath: /a
+  db-type: mysql
+  default-page-size: 30
+  redis-key-prefix: supervisor
+  static-file: .css,.js,.png,.jpg,.gif,.jpeg,.bmp,.ico,.swf,.psd,.htc,.htm,.html,.crx,.xpi,.exe,.ipa,.apk
+  context-path: ${server.context-path}
+#  userfiles-base-dir: 
+#  projectPath: 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+  instance:
+    status-page-url-path: /swagger-ui.html
+    #prefer-ip-address: true
+---
+server:
+  port: 8088
+spring:
+  profiles: test
+  application:
+    name: supervisor-web-api
+  redis:
+    database: 10
+    host: redis.aek.com
+    #password: 
+    port: 6379
+    timeout: 0
+  http:
+    multipart:
+      max-file-size: 10MB
+mybatis: 
+  mapper-locations:
+  - classpath:/mappings/**/*.xml
+  type-aliases-package: com.aek.ebey.supervisor
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    call-setters-on-nulls: true
+
+logging:
+  config: classpath:log4j2.xml
+db: 
+  driverClassName: com.mysql.jdbc.Driver
+  reader: 
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev30s
+    password: 16M089
+  writer: 
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev30s
+    password: 16M089
+  initialSize: 20
+  maxActive: 40
+  minIdle: 1
+  maxWaitMillis: 60000
+  timeBetweenEvictionRunsMillis: 3000
+  minEvictableIdleTimeMillis: 300000
+  maxPoolPreparedStatementPerConnectionSize: 20
+druid: 
+  filters: stat
+  logType: log4j2
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+
+feign-sys:
+  name: sys-web-api
+  url: http://ebey.aek.com:8090/
+app:
+  frontPath: /f
+  adminPath: /a
+  db-type: mysql
+  default-page-size: 30
+  redis-key-prefix: supervisor
+  static-file: .css,.js,.png,.jpg,.gif,.jpeg,.bmp,.ico,.swf,.psd,.htc,.htm,.html,.crx,.xpi,.exe,.ipa,.apk
+  context-path: ${server.context-path}
+#  userfiles-base-dir: 
+#  projectPath: 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
+  instance:
+    status-page-url-path: /swagger-ui.html
+    prefer-ip-address: true
