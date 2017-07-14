@@ -254,7 +254,7 @@ eureka:
     lease-expiration-duration-in-seconds: 30      
   client: 
     serviceUrl: 
-      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/ 
+      defaultZone: http://dev.aek.com:8761/eureka/
 management:
   security:
     enabled: false
