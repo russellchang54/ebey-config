@@ -257,7 +257,7 @@ eureka:
     lease-expiration-duration-in-seconds: 30      
   client: 
     serviceUrl: 
-      defaultZone: http://admin:aek56.cc@dev.aek.com:8761/eureka/
+      defaultZone: http://admin:${aek56.registry.password}@dev.aek.com:8761/eureka/
 management:
   security:
     enabled: false
