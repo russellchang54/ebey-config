@@ -22,7 +22,7 @@ feign-assets:
   url: http://dev.aek.com:9090/
 
 server:
-  port: 8090
+  port: 8082
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
@@ -100,7 +100,7 @@ feign:
   url: http://${pre-test.authserver.hostname}:${pre-test.authserver.port}/
 
 server:
-  port: 8090
+  port: 8082
   
 db: 
   driverClassName: com.mysql.jdbc.Driver
