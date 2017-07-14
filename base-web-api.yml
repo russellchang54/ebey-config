@@ -1,1 +1,158 @@
+spring:
+  profiles: dev
+  application:
+    name: base-web-api
+  session:
+    store-type: none
+  redis: 
+    host: 192.168.1.57
+    port: 6379
+    database: 0
+    timeout: 0
+    pool:
+      max-active: 8 #最大连接数
+      max-idle: 8 #最大空闲连接数
+      max-wait: -1 #最大等待时间
+      min-idle: 0 #初始化连接数
+feign:
+  name: auth-server
+  url: http://dev.aek.com:18085/
+feign-assets:
+  name: assets-web-api
+  url: http://dev.aek.com:9090/
+
+server:
+  port: 8090
+db: 
+  driverClassName: com.mysql.jdbc.Driver
+  reader: 
+    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  writer: 
+    url: jdbc:mysql://192.168.1.57:3306/sd?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  initialSize: 20
+  maxActive: 40
+  maxIdle: 20
+  minIdle: 1
+  maxWaitMillis: 60000
+  timeBetweenEvictionRunsMillis: 3000
+  minEvictableIdleTimeMillis: 300000
+  maxPoolPreparedStatementPerConnectionSize: 20
+druid: 
+  filters: stat
+  logType: log4j2
+
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+sms:
+  usr: shebei
+  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
+  psw: WMl9LyA2mpo8izpg
+  url: http://sms.aek56.com/api/
+  loginTpl: 49 #短信密码模板
+  codeTpl: 4 #验证码模板
+email: 
+  host: smtp.exmail.qq.com
+  name: noreply@aek56.com
+  password: aek.ser639
+  redirect:
+    url: http://dev.aek.com
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+  instance:
+    status-page-url-path: /swagger-ui.html
+
+---
+
+spring:
+  profiles: test
+  application:
+    name: base-web-api
+  session:
+    store-type: none
+  redis: 
+    host: ${pre-test.redis.hostname}
+    port: ${pre-test.redis.port}
+    database: ${pre-test.redis.database}
+    timeout: ${pre-test.redis.timeout}
+    pool:
+      max-active: 8 #最大连接数
+      max-idle: 8 #最大空闲连接数
+      max-wait: -1 #最大等待时间
+      min-idle: 0 #初始化连接数
+  cloud:
+    client:
+      hostname: ${dev-center.hostname}
+      ipAddress: 192.168.3.134    
+feign:
+  name: auth-server
+  url: http://${pre-test.authserver.hostname}:${pre-test.authserver.port}/
+
+server:
+  port: 8090
+  
+db: 
+  driverClassName: com.mysql.jdbc.Driver
+  reader: 
+    url: jdbc:mysql://${pre-test.mysql.hostname}:${pre-test.mysql.port}/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  writer: 
+    url: jdbc:mysql://${pre-test.mysql.hostname}:${pre-test.mysql.port}/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Aek56.com
+  initialSize: 20
+  maxActive: 40
+  maxIdle: 20
+  minIdle: 1
+  maxWaitMillis: 60000
+  timeBetweenEvictionRunsMillis: 3000
+  minEvictableIdleTimeMillis: 300000
+  maxPoolPreparedStatementPerConnectionSize: 20
+druid: 
+  filters: stat
+  logType: log4j2
+
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+sms:
+  usr: shebei
+  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
+  psw: WMl9LyA2mpo8izpg
+  url: http://sms.aek56.com/api/
+  loginTpl: 49 #短信密码模板
+  codeTpl: 4 #验证码模板
+email: 
+  host: smtp.exmail.qq.com
+  name: noreply@aek56.com
+  password: aek.ser639
+  redirect:
+    url: http://ebey.aek.com
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
+  instance:
+    status-page-url-path: /swagger-ui.html
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30    
+    ip-address: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.cloud.client.hostname}:${server.port}      
 
