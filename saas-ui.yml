@@ -161,10 +161,10 @@ logging:
 # Auth-server instance when used on Docker
 spring:
   profiles: test
-  cloud:
-    client:
-      hostname: ebey.aek.com
-      ipAddress: 192.168.1.54    
+#  cloud:
+#    client:
+#      hostname: ebey.aek.com
+#      ipAddress: 192.168.1.54    
 # The OAuth2 server definition that would be used to send the authorization requests to
 
 # Define the port where the API gateway server would be running
@@ -251,8 +251,8 @@ eureka:
   instance:
     status-page-url-path: /swagger-ui.html
     preferIpAddress: true
-    ip-address: ${spring.cloud.client.ipAddress}
-    instance-id: ${spring.cloud.client.hostname}:${server.port}    
+#    ip-address: ${spring.cloud.client.ipAddress}
+#    instance-id: ${euraka.instance.ip-address}:${server.port}    
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30      
   client: 

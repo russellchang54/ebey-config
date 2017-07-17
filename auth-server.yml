@@ -160,7 +160,7 @@ eureka:
   instance:
     preferIpAddress: true
     ip-address: ${spring.cloud.client.ipAddress}
-    instance-id: ${spring.cloud.client.hostname}:${server.port}   
+#    instance-id: ${spring.cloud.client.hostname}:${server.port}   
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30    
   client:
