@@ -1,5 +1,9 @@
 
 
+server:
+  contextPath: /apis 
+  port: 8085
+  
 spring:
   # DataSource Config
   profiles: dev
@@ -80,10 +84,6 @@ jwt:
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:mybatis/*.xml
-  
-server:
-  contextPath: /apis 
-  port: 8085
 
 logging: 
   file: logs/auth-server.log
