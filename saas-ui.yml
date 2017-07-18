@@ -36,7 +36,7 @@ eureka:
     status-page-url-path: /swagger-ui.html
     preferIpAddress: true
     ip-address: ${spring.cloud.client.ipAddress}
-    instance-id: ${spring.cloud.client.hostname}:${server.port}    
+#    instance-id: ${spring.cloud.client.hostname}:${server.port}    
   client: 
     serviceUrl: 
       defaultZone: http://admin:${aek56.registry.password}@dev.aek.com:8761/eureka/,http://admin:${aek56.registry.password}@dev.aek.com:8762/eureka/     
