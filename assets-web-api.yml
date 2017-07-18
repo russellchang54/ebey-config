@@ -1,9 +1,5 @@
 spring: 
   profiles: dev
-  application: 
-    name: assets-web-api
-  session: 
-    store-type: none
   redis: 
     host: redis.aek.com
     port: 6379
@@ -13,22 +9,16 @@ spring:
       max-active: 8 #最大连接数
       max-idle: 8 #最大空闲连接数
       max-wait: -1 #最大等待时间
-      min-idle: 0 #初始化连接数
-  #cloud:
-    #client:
-      #hostname: assets-web-api-dev
-
-      #ipAddress: 192.168.3.52  
-
-feign-sys:
-  name: sys-web-api
-  url: http://dev.aek.com:8090/
-feign-filterserver:
-  name: aek-fileserver-api
-  url: http://dev.aek.com:8087/
-feign-saasui: 
-  name: saas-ui
-  url: http://dev.aek.com:8081/
+      min-idle: 0 #初始化连接数  
+#feign-sys:
+#  name: sys-web-api
+#  url: http://dev.aek.com:8090/
+#feign-filterserver:
+#  name: aek-fileserver-api
+#  url: http://dev.aek.com:8087/
+#feign-saasui: 
+#  name: saas-ui
+#  url: http://dev.aek.com:8081/
 
 server: 
   port: 9090
@@ -36,12 +26,12 @@ db:
   driverClassName: com.mysql.jdbc.Driver
   reader: 
     url: jdbc:mysql://mysqlcluster.aek.com:6447/assets_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev30a
-    password: 16M089
+    username: '{cipher}d89a021676efaa62f229eae240fe72d6b588dc9eb7b4e45261af1181715e764a'
+    password: '{cipher}64f807bdcd7c37d7524be03a76ca1e3a10a92b2035bec48e3e7ce81ed9626dd4'
   writer: 
     url: jdbc:mysql://mysqlcluster.aek.com:6446/assets_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev30a
-    password: 16M089
+    username: '{cipher}f61c97298db674dee51d02a10e16c078de9f925dbfc0b7581f930f061bff5ceb'
+    password: '{cipher}64f807bdcd7c37d7524be03a76ca1e3a10a92b2035bec48e3e7ce81ed9626dd4'
   initialSize: 20
   maxActive: 40
   maxIdle: 20
@@ -50,28 +40,11 @@ db:
   timeBetweenEvictionRunsMillis: 3000
   minEvictableIdleTimeMillis: 300000
   maxPoolPreparedStatementPerConnectionSize: 20
-druid: 
-  filters: stat
-  logType: log4j2
+#druid: 
+#  filters: stat
+#  logType: log4j2
 
-eureka: 
-  instance:
-    status-page-url-path: /swagger-ui.html
-    preferIpAddress: true
-    ip-address: ${spring.cloud.client.ipAddress}
-    instance-id: ${spring.cloud.client.hostname}:${server.port}    
-  client: 
-    serviceUrl: 
-      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
- 
-jwt:
-  header: X-AEK56-Token
-  secret: aek56.com
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
+
 ---
 spring: 
   profiles: test

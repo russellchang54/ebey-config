@@ -4,3 +4,56 @@ dev-center:
    hostname: zj.aek.com
 dev-test:
    hostname: ebey.aek.com
+   
+   
+aek56:
+  registry:
+    password: '{cipher}425f08de75f8782f2a9a49e621397366b043932c37b630dde5121166d0cc665f'
+
+eureka:
+  instance:
+    preferIpAddress: true
+#    ip-address: ${spring.cloud.client.ipAddress}
+#    instance-id: ${spring.cloud.client.hostname}:${server.port}    
+  client:
+    serviceUrl:
+      defaultZone: http://admin:${aek56.registry.password}@dev.aek.com:8761/eureka/,http://admin:${aek56.registry.password}@dev.aek.com:8762/eureka/
+      
+
+jwt:
+  header: X-AEK56-Token
+  secret: aek56.com
+  expiration: 21600
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mybatis/*.xml
+  
+server:
+  contextPath: /apis 
+  port: 8085
+
+logging: 
+  file: logs/auth-server.log
+  pattern:
+    file: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
+    console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
+  level:
+     root: INFO
+     com.aek56: debug
+     com.netflix: ERROR
+     org:
+       springframework:
+         security: DEBUG
+
+sms:
+  usr: shebei
+  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
+  psw: WMl9LyA2mpo8izpg
+  url: http://sms.aek56.com/api/
+  loginTpl: 49 #短信密码模板
+  codeTpl: 4 #验证码模板
+  expire: 1 #默认15分钟   
