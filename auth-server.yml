@@ -26,7 +26,7 @@ mybatis:
   
 server:
   contextPath: /apis 
-  port: 18085
+  port: 8085
 
 logging: 
   file: logs/auth-server.log
@@ -74,54 +74,6 @@ spring:
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
 ---  
-
-spring:
-  profiles: docker
-  datasource:
-    url: jdbc:mysql://config-center:3306/auth
-    username: root
-    password: ibase4j
-    driver-class: com.mysql.jdbc.Driver
-  
-  jpa:
-    database-platform: org.hibernate.dialect.MySQLDialect
-    show-sql: false
-    hibernate:
-      ddl-auto: none
-      
-  jackson:
-    serialization:
-      INDENT_OUTPUT: true
-  
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
-
-security:
-  user:
-    password: password      
-
-# Datasource and JPA configuration to be used for storing the OAuth authorization details 
-# and token store
-
-    
-jwt:
-  header: X-AEK56-Token
-  secret: aek56.com
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
-      
-      
-server:
-  port: 18899
-#  contextPath: /apis 
-  
----
-  
 spring:
   # DataSource Config
   profiles: test
