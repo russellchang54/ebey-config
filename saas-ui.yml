@@ -90,7 +90,7 @@ spring:
 
 # Define the port where the API gateway server would be running
 server:
-  port: 18081
+  port: 8081
   
 zuul:
   routes:
