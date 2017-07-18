@@ -112,9 +112,11 @@ spring:
   # DataSource Config
   profiles: public
   datasource:
-    url: jdbc:mysql://192.168.1.57:3306/sd_public?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: '{cipher}ef287379d8c68ffc30f172161db76c096530e72ce554a5bff968ec25f4ed0551'
-    password: '{cipher}9d86984d7c7eed4f98b3069f83a906eefefa176473c02b3fcc545ef1a90a7346'
+    url: jdbc:mysql://192.168.1.57:3306/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+#    username: '{cipher}ef287379d8c68ffc30f172161db76c096530e72ce554a5bff968ec25f4ed0551'
+#    password: '{cipher}9d86984d7c7eed4f98b3069f83a906eefefa176473c02b3fcc545ef1a90a7346'
+    username: '{cipher}b7f61d792f19149e5f37923ebba95fca46fa3c36a868d0eb059bd20548e4b63d'
+    password: '{cipher}7aae8c470c2867e6eee1def34218a86c5a440a3a7db6ad5b1e2a99a728dd980d'
     driver-class: com.mysql.jdbc.Driver      
   redis:
     database: 3
