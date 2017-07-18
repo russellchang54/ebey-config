@@ -113,13 +113,9 @@ spring:
   profiles: public
   datasource:
     url: jdbc:mysql://192.168.1.57:3306/sd_public?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: root
-    password: Aek56.com
-    driver-class: com.mysql.jdbc.Driver
-  cloud:
-    client:
-      hostname: auth-server-pub
-      ipAddress: 192.168.3.134        
+    username: '{cipher}ef287379d8c68ffc30f172161db76c096530e72ce554a5bff968ec25f4ed0551'
+    password: '{cipher}9d86984d7c7eed4f98b3069f83a906eefefa176473c02b3fcc545ef1a90a7346'
+    driver-class: com.mysql.jdbc.Driver      
   redis:
     database: 3
     host: 192.168.1.57
@@ -144,48 +140,8 @@ spring:
     username: aaa@xxx.com
     password: xxx
     testConnection: false
-
-eureka:
-  instance:
-    preferIpAddress: true
-    ip-address: ${spring.cloud.client.ipAddress}
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-  client:
-    serviceUrl:
-      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
-
-jwt:
-  header: X-AEK56-Token
-  secret: zj.aek.com
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
-mybatis:
-  config-location: classpath:mybatis-config.xml
-  mapper-locations: classpath:mybatis/*.xml
   
 server:
   contextPath: /apis 
   port: 8127
-
-logging: 
-  file: logs/auth-server.log
-  pattern:
-    file: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
-    console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
-  level:
-     root: INFO
-     com.aek56: debug
-     com.netflix: ERROR
-
-sms:
-  usr: shebei
-  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
-  psw: WMl9LyA2mpo8izpg
-  url: http://sms.aek56.com/api/
-  loginTpl: 49 #短信密码模板
-  codeTpl: 4 #验证码模板
-  expire: 1 #默认15分钟
   
