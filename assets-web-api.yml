@@ -10,15 +10,6 @@ spring:
       max-idle: 8 #最大空闲连接数
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数  
-#feign-sys:
-#  name: sys-web-api
-#  url: http://dev.aek.com:8090/
-#feign-filterserver:
-#  name: aek-fileserver-api
-#  url: http://dev.aek.com:8087/
-#feign-saasui: 
-#  name: saas-ui
-#  url: http://dev.aek.com:8081/
 
 server: 
   port: 9090

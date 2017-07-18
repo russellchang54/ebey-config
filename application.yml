@@ -57,3 +57,16 @@ sms:
   loginTpl: 49 #短信密码模板
   codeTpl: 4 #验证码模板
   expire: 1 #默认15分钟   
+  
+  
+  
+
+feign-sys:
+  name: sys-web-api
+#  url: http://dev.aek.com:8090/
+feign-filterserver:
+  name: aek-fileserver-api
+#  url: http://dev.aek.com:8087/
+feign-saasui: 
+  name: saas-ui
+#  url: http://dev.aek.com:8081/  
