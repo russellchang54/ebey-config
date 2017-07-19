@@ -25,7 +25,7 @@ sys:
 feign-sys:
   name: sys-web-api
   url: http://dev.aek.com:8090/
-feign-filterserver:
+feign-fileserver:
   name: aek-fileserver-api
   url: http://dev.aek.com:8087/
 feign-saasui: 
@@ -125,7 +125,7 @@ sys:
 feign-sys:
   name: sys-web-api
   url: http://ebey.aek.com:8090/
-feign-filterserver:
+feign-fileserver:
   name: aek-fileserver-api
   url: http://ebey.aek.com:8087/
 feign-saasui: 
