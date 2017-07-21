@@ -9,52 +9,27 @@ aek-center:
 aek:
   #认证中心
   auth-server:
-    hostname: ${aek-center.hostname}
     port: 8085
     contextPath: /apis/
-    ipAddress: ${aek-center.ipAddress}
-    application:
-      name: auth-server
   #资产管理
   assets-server:
-    hostname: ${aek-center.hostname}
     port: 9090
     contextPath: /assets/   
-    ipAddress: ${aek-center.ipAddress}
-    application:
-      name: assets-web-api
   #用户中心
   sys-server:
-    hostname: ${aek-center.hostname}
     port: 8090
     contextPath: /sys/
-    ipAddress: ${aek-center.ipAddress}
-    application:
-      name: sys-web-api
   #维修管理
   repair-server: 
-    hostname: ${aek-center.hostname}
     port: 9099
     contextPath: /repair/
-    ipAddress: ${aek-center.ipAddress}
-    application:
-      name: repair-web-api
   #文件服务
   file-server:
-    hostname: ${aek-center.hostname}
     port: 8087
     contextPath: /
-    ipAddress: ${aek-center.ipAddress}
-    application:
-      name: aek-fileserver-api
   #网关服务
   saas-ui:
-    hostname: ${aek-center.hostname}
     port: 8081
-    ipAddress: ${aek-center.ipAddress}
-    application:
-      name: saas-ui
-
   #缓存服务
   redis:
     hostname: redis.aek.com
@@ -115,9 +90,7 @@ aek56:
 
 eureka:
   instance:
-    preferIpAddress: true
-#    ip-address: ${spring.cloud.client.ipAddress}
-#    instance-id: ${spring.cloud.client.hostname}:${server.port}    
+    preferIpAddress: true   
   client:
     serviceUrl:
       defaultZone: http://admin:${aek56.registry.password}@dev.aek.com:8761/eureka/,http://admin:${aek56.registry.password}@dev.aek.com:8762/eureka/
