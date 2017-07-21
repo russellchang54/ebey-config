@@ -34,3 +34,16 @@ pre-test:
     hostname: dev.aek.com 
     port: 3306
     db: sd_test
+    
+aek56:
+  registry:
+    password: '{cipher}425f08de75f8782f2a9a49e621397366b043932c37b630dde5121166d0cc665f'
+
+eureka:
+  instance:
+    preferIpAddress: true
+#    ip-address: ${spring.cloud.client.ipAddress}
+#    instance-id: ${spring.cloud.client.hostname}:${server.port}    
+  client:
+    serviceUrl:
+      defaultZone: http://admin:${aek56.registry.password}@dev.aek.com:8761/eureka/,http://admin:${aek56.registry.password}@dev.aek.com:8762/eureka/    
