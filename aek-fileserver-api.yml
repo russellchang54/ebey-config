@@ -1,7 +1,5 @@
 spring:
   profiles: uat
-  application:
-    name: ${aek.file-server.application.name}
   http:
     multipart:
       max-file-size: 10MB
