@@ -1,7 +1,5 @@
 spring: 
   profiles: uat
-  application:
-    name: ${aek.assets-server.application.name}
   redis: 
     host: ${aek.redis.hostname}
     port: ${aek.redis.port}
