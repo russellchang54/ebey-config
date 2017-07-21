@@ -1,7 +1,5 @@
 spring:
   profiles: uat
-  application:
-    name: ${aek.sys-server.application.name}
   session:
     store-type: none
   redis: 
