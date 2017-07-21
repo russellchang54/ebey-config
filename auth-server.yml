@@ -1,3 +1,7 @@
+server:
+  contextPath: ${aek.auth-server.contextPath} 
+  port: ${aek.auth-server.port}
+
 spring:
   profiles: uat
   datasource:
@@ -16,12 +20,9 @@ spring:
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
 
-server:
-  contextPath: ${aek.auth-server.contextPath} 
-  port: ${aek.auth-server.port}
+
   
-spring:
-  # DataSource Config
+
   profiles: dev
   datasource:
     url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
