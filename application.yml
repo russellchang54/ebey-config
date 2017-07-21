@@ -5,7 +5,11 @@ aek-center:
    hostname: http://192.168.1.48 
    ipAddress: 192.168.1.48
    profiles: uat
-
+   
+management:
+   security:
+     enabled: false
+     
 aek:
   #认证中心
   auth-server:
