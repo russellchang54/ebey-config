@@ -39,3 +39,6 @@ spring:
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
      
+server:
+  contextPath: /apis 
+  port: 8085
