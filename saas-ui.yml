@@ -2,7 +2,7 @@
   profiles: uat
 
 server:
-  port: 8081 
+  port: 18085 
   
 zuul:
   routes:
