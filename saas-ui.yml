@@ -1,7 +1,5 @@
  spring:
   profiles: uat
-  application:
-    name: ${aek.saas-ui.application.name}
 
 server:
   port: ${aek.saas-ui.port}
