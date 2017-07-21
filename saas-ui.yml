@@ -2,7 +2,7 @@
   profiles: uat
 
 server:
-  port: ${aek.saas-ui.port} 
+  port: 8081 
   
 zuul:
   routes:
