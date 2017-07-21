@@ -1,150 +1,22 @@
-
-
-server:
-  contextPath: /apis 
-  port: 8085
-#  address
-  
 spring:
-  # DataSource Config
-  profiles: dev
+  profiles: uat
   datasource:
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: '{cipher}b7f61d792f19149e5f37923ebba95fca46fa3c36a868d0eb059bd20548e4b63d'
-    password: '{cipher}7aae8c470c2867e6eee1def34218a86c5a440a3a7db6ad5b1e2a99a728dd980d'
+    url: jdbc:mysql://${aek.mysql.sys.writer.hostname}:${aek.mysql.sys.writer.port}/${aek.mysql.sys.writer.database}?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    username: ${aek.mysql.sys.writer.username}
+    password: ${aek.mysql.sys.writer.password}
     driver-class: com.mysql.jdbc.Driver    
   redis:
-    #database: 0
-    host: redis.aek.com
-    #password: # Login password of the redis server.
-    port: 6379
-    timeout: 0
-    pool:
-      max-active: 8 #最大连接数
-      max-idle: 8 #最大空闲连接数
-      max-wait: -1 #最大等待时间
-      min-idle: 0 #初始化连接数
----  
-spring:
-  # DataSource Config
-  profiles: test
-  datasource:
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: '{cipher}5bac23635949031a365f240d1929b3af5870772f498372e0643437f84483120a'
-    password: '{cipher}1251a78b23db1f1a0c28ca308307a994ed46efbe1eb13eef531d143bc6ccd739'
-    driver-class: com.mysql.jdbc.Driver
-  cloud:
-    client:
-      hostname: ebey.aek.com
-      ipAddress: 192.168.1.54  
-  redis:
-    database: 10
-    host: redis.aek.com
-    #password: # Login password of the redis server.
-    port: 6379
-    timeout: 0
+    host: ${aek.redis.hostname}
+    port: ${aek.redis.port}
+    database: ${aek.redis.database}
+    timeout: ${aek.redis.timeout}
     pool:
       max-active: 8 #最大连接数
       max-idle: 8 #最大空闲连接数
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
 
-  rabbitmq:
-    host: svc
-    port: 8091
-    username: guest
-    password: guest
-    virtualHost: /
-  mail:
-    host: xxx
-    port: 25
-    username: aaa@xxx.com
-    password: xxx
-    testConnection: false
-
-eureka:
-  instance:
-    preferIpAddress: true
-    ip-address: ${spring.cloud.client.ipAddress}
-#    instance-id: ${spring.cloud.client.hostname}:${server.port}   
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30    
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.3.102:8761/eureka/
-      
-
-jwt:
-  header: X-AEK56-Token
-  secret: aek56.com
-  expiration: 21600
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
-mybatis:
-  config-location: classpath:mybatis-config.xml
-  mapper-locations: classpath:mybatis/*.xml
-
-logging: 
-  file: logs/auth-server.log
-  pattern:
-    file: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
-    console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
-  level:
-     root: INFO
-     com.aek56: debug
-     com.netflix: ERROR
-     org:
-       springframework:
-         security: DEBUG
-
-sms:
-  usr: shebei
-  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
-  psw: WMl9LyA2mpo8izpg
-  url: http://sms.aek56.com/api/
-  loginTpl: 49 #短信密码模板
-  codeTpl: 4 #验证码模板
-  expire: 1 #默认15分钟
-
----
-spring:
-  # DataSource Config
-  profiles: public
-  datasource:
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-#    username: '{cipher}ef287379d8c68ffc30f172161db76c096530e72ce554a5bff968ec25f4ed0551'
-#    password: '{cipher}9d86984d7c7eed4f98b3069f83a906eefefa176473c02b3fcc545ef1a90a7346'
-    username: '{cipher}b7f61d792f19149e5f37923ebba95fca46fa3c36a868d0eb059bd20548e4b63d'
-    password: '{cipher}7aae8c470c2867e6eee1def34218a86c5a440a3a7db6ad5b1e2a99a728dd980d'
-    driver-class: com.mysql.jdbc.Driver      
-  redis:
-    database: 3
-    host: 192.168.1.57
-    #password: # Login password of the redis server.
-    port: 6379
-    timeout: 0
-    pool:
-      max-active: 8 #最大连接数
-      max-idle: 8 #最大空闲连接数
-      max-wait: -1 #最大等待时间
-      min-idle: 0 #初始化连接数
-
-  rabbitmq:
-    host: svc
-    port: 8091
-    username: guest
-    password: guest
-    virtualHost: /
-  mail:
-    host: xxx
-    port: 25
-    username: aaa@xxx.com
-    password: xxx
-    testConnection: false
-  
 server:
-  contextPath: /apis 
-  port: 8127
+  contextPath: ${aek.auth-server.contextPath} 
+  port: ${aek.auth-server.port}
   

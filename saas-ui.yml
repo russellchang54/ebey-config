@@ -1,15 +1,15 @@
- 
-spring:
-  profiles: dev
-#  cloud:
-#    client:
-#      hostname: API-Getway
-#      ipAddress: ${env.develop}   
-# The OAuth2 server definition that would be used to send the authorization requests to
+ spring:
+  profiles: uat
+  application:
+    name: ${aek.saas-ui.application.name}
 
-# Define the port where the API gateway server would be running
 server:
-  port: 8081
+  port: ${aek.saas-ui.port}
+
+gateway:
+ hostname: ${aek.saas-ui.hostname}
+ port: ${aek.saas-ui.port}
+ contextPath: / 
   
 zuul:
   routes:
@@ -41,105 +41,4 @@ zuul:
   sensitiveHeader: X-AEK56-Token   
   SendResponseFilter:
     post:
-      disable: false
-      
----
-# Auth-server instance when used on Docker
-spring:
-  profiles: test
-#  cloud:
-#    client:
-#      hostname: ebey.aek.com
-#      ipAddress: 192.168.1.54    
-# The OAuth2 server definition that would be used to send the authorization requests to
-
-# Define the port where the API gateway server would be running
-server:
-  port: 8081
-gateway:
- hostname: ebey.aek.com
- port: 8081
- contextPath: /  
-authserver:
-    hostname: ebey.aek.com
-    port: 8085
-    contextPath: /apis/    
-assetsserver:
-    hostname: ebey.aek.com
-    port: 9090
-    contextPath: /assets/
-sys-web:
-    hostname: ebey.aek.com
-    port: 8090    
-    contextPath: /sys/
-repair:
-    hostname: ebey.aek.com
-    port: 9099    
-    contextPath: /repair/
-fileserver:
-    hostname: ebey.aek.com
-    port: 8087    
-    contextPath: /
-zuul:
-  routes:
-    assets:
-      path: /api/assets/**
-      stripPrefix: true
-      url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
-    auth:
-      path: /api/api_v3/**
-      stripPrefix: true
-      url: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}
-    sys-web:
-      path: /api/sys/**
-      stripPrefix: true
-      url: http://${sys-web.hostname}:${sys-web.port}${sys-web.contextPath}
-    repair:
-      path: /api/repair/**
-      stripPrefix: true
-      url: http://${repair.hostname}:${repair.port}${repair.contextPath}
-    fileserver:
-      path: /api/upload/**
-      stripPrefix: true
-      url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
-    browserfile:
-      path: /api/file/**
-      stripPrefix: true
-      url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
-    sensitiveHeaders: Cookie,Set-Cookie,X-AEK56-Token      
-    servlet-path: /zuul    
-  max:
-    host:
-      connections: 500
-  host:
-    socket-timeout-millis: 60000
-    connect-timeout-millis: 60000         
----
-# Auth-server instance when used on Docker
-spring:
-  profiles: docker
-#  cloud:
-#    client:
-#      hostname: ebey.aek.com
-#      ipAddress: 192.168.1.54    
-# The OAuth2 server definition that would be used to send the authorization requests to
-
-# Define the port where the API gateway server would be running
-server:
-  port: 80       
-
-security:
-  oauth2:
-    sso:
-      home:
-        secure: false
-        path: /,/**/*.html,/hello,/refresh
-    client:
-      accessTokenUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/token
-      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}/oauth/authorize
-      clientId: aek56.com
-      clientSecret: secret
-    resource:
-      jwt: 
-        keyValue: aek56.com
-        
+      disable: false     

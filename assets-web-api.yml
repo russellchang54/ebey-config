@@ -1,10 +1,12 @@
 spring: 
-  profiles: dev
+  profiles: uat
+  application:
+    name: ${aek.assets-server.application.name}
   redis: 
-    host: redis.aek.com
-    port: 6379
-    database: 0
-    timeout: 0
+    host: ${aek.redis.hostname}
+    port: ${aek.redis.port}
+    database: ${aek.redis.database}
+    timeout: ${aek.redis.timeout}
     pool:
       max-active: 8 #最大连接数
       max-idle: 8 #最大空闲连接数
@@ -12,64 +14,18 @@ spring:
       min-idle: 0 #初始化连接数  
 
 server: 
-  port: 9090
+  port: ${aek.assets-server.port}
+
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6447/assets_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: '{cipher}d89a021676efaa62f229eae240fe72d6b588dc9eb7b4e45261af1181715e764a'
-    password: '{cipher}64f807bdcd7c37d7524be03a76ca1e3a10a92b2035bec48e3e7ce81ed9626dd4'
+    url: jdbc:mysql://${aek.mysql.assets.reader.hostname}:${aek.mysql.assets.reader.port}/${aek.mysql.assets.reader.database}?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: ${aek.mysql.assets.reader.username}
+    password: ${aek.mysql.assets.reader.password}
   writer: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/assets_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: '{cipher}f61c97298db674dee51d02a10e16c078de9f925dbfc0b7581f930f061bff5ceb'
-    password: '{cipher}64f807bdcd7c37d7524be03a76ca1e3a10a92b2035bec48e3e7ce81ed9626dd4'
-  initialSize: 20
-  maxActive: 40
-  maxIdle: 20
-  minIdle: 1
-  maxWaitMillis: 60000
-  timeBetweenEvictionRunsMillis: 3000
-  minEvictableIdleTimeMillis: 300000
-  maxPoolPreparedStatementPerConnectionSize: 20
-#druid: 
-#  filters: stat
-#  logType: log4j2
-
-
----
-spring: 
-  profiles: test
-  application: 
-    name: assets-web-api
-  session: 
-    store-type: none
-  redis: 
-    host: redis.aek.com
-    port: 6379
-    database: 10
-    timeout: 0
-    pool:
-      max-active: 8 #最大连接数
-      max-idle: 8 #最大空闲连接数
-      max-wait: -1 #最大等待时间
-      min-idle: 0 #初始化连接数
-  cloud:
-    client:
-      hostname: ebey.aek.com
-      ipAddress: 192.168.1.54      
-
-server: 
-  port: 9090
-db: 
-  driverClassName: com.mysql.jdbc.Driver
-  reader: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6447/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev80a
-    password: 16M089
-  writer: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev80a
-    password: 16M089
+    url: jdbc:mysql://${aek.mysql.assets.writer.hostname}:${aek.mysql.assets.writer.port}/${aek.mysql.assets.writer.database}?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: ${aek.mysql.assets.writer.username}
+    password: ${aek.mysql.assets.writer.password}
   initialSize: 20
   maxActive: 40
   maxIdle: 20
@@ -81,34 +37,3 @@ db:
 druid: 
   filters: stat
   logType: log4j2
-
-feign-sys:
-  name: sys-web-api
-  url: http://ebey.aek.com:8090/
-feign-filterserver:
-  name: aek-fileserver-api
-  url: http://ebey.aek.com:8087/
-feign-saasui: 
-  name: saas-ui
-  url: http://ebey.aek.com:8081/
-
-eureka: 
-  instance:
-    preferIpAddress: true
-    status-page-url-path: /swagger-ui.html
-    ip-address: ${spring.cloud.client.ipAddress}
-    instance-id: ${spring.cloud.client.hostname}:${server.port} 
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30      
-  client: 
-    serviceUrl: 
-      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
-
-jwt:
-  header: X-AEK56-Token
-  secret: aek56.com
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh

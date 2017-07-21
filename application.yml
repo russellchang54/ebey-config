@@ -1,9 +1,112 @@
 mail:
   domain: aek56.com
-dev-center:
-   hostname: zj.aek.com
-dev-test:
-   hostname: ebey.aek.com
+
+aek-center:
+   hostname: http://192.168.1.48 
+   ipAddress: 192.168.1.48
+   profiles: uat
+
+aek:
+  #认证中心
+  auth-server:
+    hostname: ${aek-center.hostname}
+    port: 8085
+    contextPath: /apis/
+    ipAddress: ${aek-center.ipAddress}
+    application:
+      name: auth-server
+  #资产管理
+  assets-server:
+    hostname: ${aek-center.hostname}
+    port: 9090
+    contextPath: /assets/   
+    ipAddress: ${aek-center.ipAddress}
+    application:
+      name: assets-web-api
+  #用户中心
+  sys-server:
+    hostname: ${aek-center.hostname}
+    port: 8090
+    contextPath: /sys/
+    ipAddress: ${aek-center.ipAddress}
+    application:
+      name: sys-web-api
+  #维修管理
+  repair-server: 
+    hostname: ${aek-center.hostname}
+    port: 9099
+    contextPath: /repair/
+    ipAddress: ${aek-center.ipAddress}
+    application:
+      name: repair-web-api
+  #文件服务
+  file-server:
+    hostname: ${aek-center.hostname}
+    port: 8087
+    contextPath: /
+    ipAddress: ${aek-center.ipAddress}
+    application:
+      name: aek-fileserver-api
+  #网关服务
+  saas-ui:
+    hostname: ${aek-center.hostname}
+    port: 8081
+    ipAddress: ${aek-center.ipAddress}
+    application:
+      name: saas-ui
+
+  #缓存服务
+  redis:
+    hostname: redis.aek.com
+    port: 6379
+    database: 15
+    timeout: 0
+
+
+  #数据库配置
+  mysql:
+    #资产管理mysql配置
+    assets:
+      reader:
+        hostname: '{cipher}d422636bd68920a4debdd6ec7c792d0ea49446c586167277a3971e9a3a56f2aa1bc352b02965756fe3c4c5133496f122'
+        port: '{cipher}dafb9a18fc738026f04cf0df486f7a475c5b11619426b18f7b5260a9849b2bf6'
+        database: '{cipher}18d48a00e0ddf795d54895dfc234716db4d5c0d407512cdcc5c819a2943dba71'
+        username: '{cipher}fbd664b5104b4474eb77e54304c74bd3992e81bef14216fe9c64ce6c946df17f'
+        password: '{cipher}34b16955b6dbf213df5c9d11b1f90bf257242c4ef9b74f2d18fbf8f869656594'
+      writer:
+        hostname: '{cipher}d422636bd68920a4debdd6ec7c792d0ea49446c586167277a3971e9a3a56f2aa1bc352b02965756fe3c4c5133496f122'
+        port: '{cipher}bb3af7ede2ab3d6d992c1c63910a8585085647ea0231dfee3da0c6c17f806c2e'
+        database: '{cipher}18d48a00e0ddf795d54895dfc234716db4d5c0d407512cdcc5c819a2943dba71'
+        username: '{cipher}fbd664b5104b4474eb77e54304c74bd3992e81bef14216fe9c64ce6c946df17f'
+        password: '{cipher}34b16955b6dbf213df5c9d11b1f90bf257242c4ef9b74f2d18fbf8f869656594'
+    #用户中心/认证中心mysql配置，认证中心使用writer配置
+    sys:
+      reader:
+        hostname: '{cipher}d422636bd68920a4debdd6ec7c792d0ea49446c586167277a3971e9a3a56f2aa1bc352b02965756fe3c4c5133496f122'
+        port: '{cipher}dafb9a18fc738026f04cf0df486f7a475c5b11619426b18f7b5260a9849b2bf6'
+        database: '{cipher}4b1a10d360e707954c13fc26a35400aff7cfa9e423fc100334e4a5c495a4688f'
+        username: '{cipher}fabe28d022b11d580b89c2b4c1d1accde5c099385de3b27829961acf2730b5bb'
+        password: '{cipher}34b16955b6dbf213df5c9d11b1f90bf257242c4ef9b74f2d18fbf8f869656594'
+      writer:
+        hostname: '{cipher}d422636bd68920a4debdd6ec7c792d0ea49446c586167277a3971e9a3a56f2aa1bc352b02965756fe3c4c5133496f122'
+        port: '{cipher}bb3af7ede2ab3d6d992c1c63910a8585085647ea0231dfee3da0c6c17f806c2e'
+        database: '{cipher}4b1a10d360e707954c13fc26a35400aff7cfa9e423fc100334e4a5c495a4688f'
+        username: '{cipher}fabe28d022b11d580b89c2b4c1d1accde5c099385de3b27829961acf2730b5bb'
+        password: '{cipher}34b16955b6dbf213df5c9d11b1f90bf257242c4ef9b74f2d18fbf8f869656594'
+    #维修管理myql配置
+    repair:
+      reader:
+        hostname: '{cipher}d422636bd68920a4debdd6ec7c792d0ea49446c586167277a3971e9a3a56f2aa1bc352b02965756fe3c4c5133496f122'
+        port: '{cipher}dafb9a18fc738026f04cf0df486f7a475c5b11619426b18f7b5260a9849b2bf6'
+        database: '{cipher}ff891c617bb1e58f0bfc9dd079ccec2953d921118411e3b9b69a6994fe06cac2'
+        username: '{cipher}66875155e3c1292ffa1a95a2dbfc1b4e8cfbaa28a78c0a766bd4e191dc49226a'
+        password: '{cipher}34b16955b6dbf213df5c9d11b1f90bf257242c4ef9b74f2d18fbf8f869656594'
+      writer:
+        hostname: '{cipher}d422636bd68920a4debdd6ec7c792d0ea49446c586167277a3971e9a3a56f2aa1bc352b02965756fe3c4c5133496f122'
+        port: '{cipher}bb3af7ede2ab3d6d992c1c63910a8585085647ea0231dfee3da0c6c17f806c2e'
+        database: '{cipher}ff891c617bb1e58f0bfc9dd079ccec2953d921118411e3b9b69a6994fe06cac2'
+        username: '{cipher}66875155e3c1292ffa1a95a2dbfc1b4e8cfbaa28a78c0a766bd4e191dc49226a'
+        password: '{cipher}34b16955b6dbf213df5c9d11b1f90bf257242c4ef9b74f2d18fbf8f869656594'
    
    
 aek56:
@@ -22,7 +125,7 @@ eureka:
 
 jwt:
   header: X-AEK56-Token
-  secret: aek56.cc
+  secret: '{cipher}425f08de75f8782f2a9a49e621397366b043932c37b630dde5121166d0cc665f'
   expiration: 21600
   route:
     authentication:
@@ -31,42 +134,26 @@ jwt:
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:mybatis/*.xml
-  
-server:
-  contextPath: /apis 
-  port: 8085
-
-logging: 
-  file: logs/auth-server.log
-  pattern:
-    file: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
-    console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
-  level:
-     root: INFO
-     com.aek56: debug
-     com.netflix: ERROR
-     org:
-       springframework:
-         security: DEBUG
 
 sms:
   usr: shebei
-  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
-  psw: WMl9LyA2mpo8izpg
-  url: http://sms.aek56.com/api/
+  authkey: '{cipher}c79a9e033f6fa6f9fb86dea73d1b9d33ae034bc66b509cffd7a7765b577eefc68a889aab3db970b9b36f5d03ef5afc2cbc1de8fe0803ce75009b03310c131d2b'
+  psw: '{cipher}22db915a75587cd564b00972e9eea92c0833f41e52251d626a95946cc6cb56687324cbb86ff2ca1253451149a0beca4b'
+  url: '{cipher}6cafd6c33e831979454ee74b4a480b8fdf3257d6b0ccd281557f92336a58863db9cca68a8174ecce0425e6d532f21560'
   loginTpl: 49 #短信密码模板
   codeTpl: 4 #验证码模板
-  expire: 1 #默认15分钟   
-  
-  
-  
+  expire: 1 #默认15分钟    
 
+#feign client
 feign-sys:
   name: sys-web-api
-#  url: http://dev.aek.com:8090/
-feign-filterserver:
+feign-fileserver:
   name: aek-fileserver-api
-#  url: http://dev.aek.com:8087/
 feign-saasui: 
   name: saas-ui
-#  url: http://dev.aek.com:8081/  
+feign:
+  name: auth-server
+feign-assets:
+  name: assets-web-api
+feign-auth:
+  name: auth-server
