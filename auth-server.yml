@@ -19,26 +19,3 @@ spring:
       max-idle: 8 #最大空闲连接数
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
----
-spring:
-  profiles: dev
-  datasource:
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: '{cipher}b7f61d792f19149e5f37923ebba95fca46fa3c36a868d0eb059bd20548e4b63d'
-    password: '{cipher}7aae8c470c2867e6eee1def34218a86c5a440a3a7db6ad5b1e2a99a728dd980d'
-    driver-class: com.mysql.jdbc.Driver    
-  redis:
-    #database: 0
-    host: redis.aek.com
-    #password: # Login password of the redis server.
-    port: 6379
-    timeout: 0
-    pool:
-      max-active: 8 #最大连接数
-      max-idle: 8 #最大空闲连接数
-      max-wait: -1 #最大等待时间
-      min-idle: 0 #初始化连接数
-     
-server:
-  contextPath: /apis 
-  port: 8085
