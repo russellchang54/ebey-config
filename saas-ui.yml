@@ -20,7 +20,7 @@ zuul:
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000  
-  sensitiveHeader: X-AEK56-Token   
+  sensitiveHeader:  
   SendResponseFilter:
     post:
       disable: false     
