@@ -96,6 +96,7 @@ eureka:
   instance:
     preferIpAddress: true   
   client:
+    preferSameZoneEureka: true
     serviceUrl:
       defaultZone: http://admin:${aek56.registry.password}@dev.aek.com:8761/eureka/,http://admin:${aek56.registry.password}@dev.aek.com:8762/eureka/
       
