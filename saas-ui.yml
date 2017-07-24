@@ -23,4 +23,19 @@ zuul:
   sensitiveHeader:  
   SendResponseFilter:
     post:
-      disable: false     
+      disable: false    
+      
+logging: 
+  file: logs/saas-ui.log
+  pattern:
+    file: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
+    console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
+  level:
+     root: INFO
+     com.aek56: debug
+     com.netflix: ERROR
+     org:
+       springframework:
+         security: DEBUG
+
+
