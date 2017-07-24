@@ -7,7 +7,7 @@ server:
 zuul:
   routes:
     servlet-path: /zuul
-    ignoredServices: '*'
+    #ignoredServices: '*'
     assets-web-api: /api/assets/**
     auth-server: /api/api_v3/**
     sys-web-api: /api/sys/**
@@ -26,7 +26,7 @@ zuul:
       disable: false    
       
 logging: 
-  file: ./logs/saas-ui.log
+  file: logs/saas-ui.log
   pattern:
     file: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
     console: "%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%c{36}.%M:%L] - %msg%xEx%n"
