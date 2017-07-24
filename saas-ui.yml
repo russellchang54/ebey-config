@@ -45,11 +45,7 @@ fileserver:
     contextPath: /
 
 zuul:
-  routes:
-    saas:
-      path: /
-      stripPrefix: true
-      url: /saas/
+  routes:      
     assets:
       path: /api/assets/**
       stripPrefix: true
