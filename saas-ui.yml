@@ -81,11 +81,7 @@ zuul:
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000  
-  sensitiveHeaders:    
-  SendResponseFilter:
-    post:
-      disable: false
-  
+  sensitiveHeaders: 
 
 hystrix:
   command:
@@ -221,7 +217,7 @@ zuul:
       path: /api/file/**
       stripPrefix: true
       url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
-    sensitiveHeaders: Cookie,Set-Cookie,X-AEK56-Token      
+      sensitiveHeaders: Cookie,Set-Cookie,X-AEK56-Token      
     servlet-path: /zuul    
   max:
     host:
@@ -229,7 +225,7 @@ zuul:
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000
-    
+  sensitiveHeaders: 
 hystrix:
   command:
     default:
@@ -344,7 +340,7 @@ zuul:
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000       
-    
+  sensitiveHeaders: 
 hystrix:
   command:
     default:
