@@ -14,13 +14,13 @@ zuul:
     repair-web-api: /api/repair/**
     aek-fileserver-api: /api/upload/**
     aek-fileserver-api: /api/file/**      
-  max:
-    host:
-      connections: 500
-  host:
-    socket-timeout-millis: 60000
-    connect-timeout-millis: 60000  
-  sensitiveHeader:  
-  SendResponseFilter:
-    post:
-      disable: false     
+  #max:
+    #host:
+      #connections: 500
+  #host:
+    #socket-timeout-millis: 60000
+    #connect-timeout-millis: 60000  
+  #sensitiveHeader:  
+  #SendResponseFilter:
+    #post:
+      #disable: false     
