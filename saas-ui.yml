@@ -81,7 +81,7 @@ zuul:
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000  
-  sensitiveHeaders: 
+  #sensitiveHeaders: 
 
 hystrix:
   command:
