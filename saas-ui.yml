@@ -81,7 +81,7 @@ zuul:
   host:
     socket-timeout-millis: 60000
     connect-timeout-millis: 60000  
-  sensitiveHeader:    
+  sensitiveHeaders:    
   SendResponseFilter:
     post:
       disable: false
