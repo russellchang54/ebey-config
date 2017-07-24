@@ -11,16 +11,16 @@ zuul:
     #assets-web-api: /api/assets/**
     #auth-server: /api/api_v3/**
     #sys-web-api: /api/sys/**
-    #repair-web-api: /api/repair/**
-    #aek-fileserver-api: /api/upload/**
-    #aek-fileserver-api: /api/file/**      
-  #max:
-    #host:
-      #connections: 500
-  #host:
-    #socket-timeout-millis: 60000
-    #connect-timeout-millis: 60000  
-  #sensitiveHeader:  
-  #SendResponseFilter:
-    #post:
-      #disable: false     
+    repair-web-api: /api/repair/**
+    aek-fileserver-api: /api/upload/**
+    aek-fileserver-api: /api/file/**      
+  max:
+    host:
+      connections: 500
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000  
+  sensitiveHeader:  
+  SendResponseFilter:
+    post:
+      disable: false     
