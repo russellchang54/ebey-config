@@ -13,7 +13,7 @@ zuul:
     sys-web-api: /api/sys/**
     repair-web-api: /api/repair/**
     #aek-fileserver-api: /api/upload/**
-    #aek-fileserver-api: /api/file/**
+    aek-fileserver-api: /api/file/**
   max:
     host:
       connections: 500
