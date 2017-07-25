@@ -59,6 +59,7 @@ app:
   redis-key-prefix: supervisor
   static-file: .css,.js,.png,.jpg,.gif,.jpeg,.bmp,.ico,.swf,.psd,.htc,.htm,.html,.crx,.xpi,.exe,.ipa,.apk
   context-path: ${server.context-path}
+  token-key: ${jwt.header}
 #  userfiles-base-dir: 
 #  projectPath: 
 eureka:
@@ -130,6 +131,7 @@ app:
   redis-key-prefix: supervisor
   static-file: .css,.js,.png,.jpg,.gif,.jpeg,.bmp,.ico,.swf,.psd,.htc,.htm,.html,.crx,.xpi,.exe,.ipa,.apk
   context-path: ${server.context-path}
+  token-key: ${jwt.header}
 #  userfiles-base-dir: 
 #  projectPath: 
 eureka:
