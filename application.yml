@@ -13,15 +13,15 @@ management:
 aek:
   #认证中心
   auth-server:
-    port: 8085
+    port: 18085
     contextPath: /apis/
   #资产管理
   assets-server:
-    port: 9090
+    port: 19090
     contextPath: /assets/   
   #用户中心
   sys-server:
-    port: 8090
+    port: 18090
     contextPath: /sys/
   #维修管理
   repair-server: 
@@ -29,11 +29,11 @@ aek:
     contextPath: /repair/
   #文件服务
   file-server:
-    port: 8087
+    port: 18087
     contextPath: /
   #网关服务
   saas-ui:
-    port: 8081
+    port: 18081
   #缓存服务
   redis:
     hostname: redis.aek.com
