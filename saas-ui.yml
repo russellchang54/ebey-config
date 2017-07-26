@@ -21,7 +21,7 @@ zuul:
       serviceId: assets-web-api
     auth-server: 
       path: /api/api_v3/**
-      stripPrefix: false
+      stripPrefix: true
       url: http://192.168.1.48:8085/apis/
     sys-web-api: 
       path: /api/sys/**
