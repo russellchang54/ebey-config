@@ -22,7 +22,7 @@ zuul:
     auth-server: 
       path: /api/api_v3/**
       stripPrefix: false
-      serviceId: auth-server
+      url: http://192.168.1.48:8085/apis/
     sys-web-api: 
       path: /api/sys/**
       stripPrefix: true
