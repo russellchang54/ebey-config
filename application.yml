@@ -25,7 +25,7 @@ aek:
     contextPath: /sys/
   #维修管理
   repair-server: 
-    port: 9099
+    port: 19099
     contextPath: /repair/
   #文件服务
   file-server:
