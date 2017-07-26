@@ -1,5 +1,6 @@
 server:
   port: 8088
+  context-path: 
 spring:
   profiles: dev
   application:
@@ -72,6 +73,7 @@ eureka:
 ---
 server:
   port: 8088
+  context-path: 
 spring:
   profiles: test
   application:
