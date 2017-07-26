@@ -8,12 +8,30 @@ zuul:
   routes:
     servlet-path: /zuul
     #ignoredServices: '*'
-    assets-web-api: /api/assets/**
-    auth-server: /api/api_v3/**
-    sys-web-api: /api/sys/**
-    repair-web-api: /api/repair/**
+    #assets-web-api: /api/assets/**
+    #auth-server: /api/api_v3/**
+    #sys-web-api: /api/sys/**
+    #repair-web-api: /api/repair/**
     #aek-fileserver-api: /api/upload/**
-    aek-fileserver-api: /api/file/**
+    #aek-fileserver-api: /api/file/**
+    
+    assets-web-api: 
+      path: /api/assets/**
+      serviceId: assets-web-api
+    auth-server: 
+      path: /api/api_v3/**
+      serviceId: auth-server
+    sys-web-api: 
+      path: /api/sys/**
+      serviceId: sys-web-api
+    repair-web-api: 
+      path: /api/repair/**
+      serviceId: repair-web-api
+    #aek-fileserver-api: /api/upload/**
+    aek-fileserver-api: 
+      path: /api/file/**
+      serviceId: aek-fileserver-api
+      
   max:
     host:
       connections: 500
