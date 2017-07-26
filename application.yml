@@ -94,7 +94,9 @@ aek56:
 
 eureka:
   instance:
-    preferIpAddress: true   
+    preferIpAddress: true
+    metadataMap:
+      zone: uat
   client:
     preferSameZoneEureka: true
     serviceUrl:
