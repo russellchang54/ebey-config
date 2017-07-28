@@ -45,7 +45,7 @@ mybatis:
   mapper-locations: classpath:mybatis/*.xml
   
 server:
-  contextPath: /apis 
+  #contextPath: /apis 
   port: 18085
 
 logging: 
@@ -181,7 +181,7 @@ mybatis:
   mapper-locations: classpath:mybatis/*.xml
   
 server:
-  contextPath: /apis 
+  #contextPath: /apis 
   port: 8085
 
 logging: 
