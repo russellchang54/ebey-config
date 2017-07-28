@@ -21,7 +21,6 @@ spring:
       #ipAddress: 192.168.3.52  
 
 sys: 
-  appletUrl: http://192.168.3.66:8080/
 feign-sys:
   name: sys-web-api
   url: http://dev.aek.com:8090/
@@ -121,7 +120,6 @@ druid:
   logType: log4j2
 
 sys: 
-  appletUrl: http://192.168.3.66:8080/
 feign-sys:
   name: sys-web-api
   url: http://ebey.aek.com:8090/
