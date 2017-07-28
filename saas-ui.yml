@@ -49,27 +49,27 @@ zuul:
     assets:
       path: /api/assets/**
       stripPrefix: true
-      url: http://${assetsserver.hostname}:${assetsserver.port}${assetsserver.contextPath}
+      url: http://${assetsserver.hostname}:${assetsserver.port}
     auth:
       path: /api/api_v3/**
       stripPrefix: true
-      url: http://${authserver.hostname}:${authserver.port}${authserver.contextPath}
+      url: http://${authserver.hostname}:${authserver.port}
     sys-web:
       path: /api/sys/**
       stripPrefix: true
-      url: http://${sys-web.hostname}:${sys-web.port}${sys-web.contextPath}
+      url: http://${sys-web.hostname}:${sys-web.port}
     repair:
       path: /api/repair/**
       stripPrefix: true
-      url: http://${repair.hostname}:${repair.port}${repair.contextPath}
+      url: http://${repair.hostname}:${repair.port}
     fileserver:
       path: /api/upload/**
       stripPrefix: true
-      url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
+      url: http://${fileserver.hostname}:${fileserver.port}
     browserfile:
       path: /api/file/**
       stripPrefix: true
-      url: http://${fileserver.hostname}:${fileserver.port}${fileserver.contextPath}
+      url: http://${fileserver.hostname}:${fileserver.port}
     servlet-path: /zuul      
   max:
     host:
