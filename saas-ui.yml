@@ -23,8 +23,8 @@ zuul:
       serviceId: assets-web-api
     auth-server: 
 #      path: /api/api_v3/**
-      path: /api_v3/**
-      stripPrefix: true
+      path: /apis/**
+      stripPrefix: false
       url: http://192.168.1.48:8085/apis/
     sys-web-api: 
 #      path: /api/sys/**
@@ -33,7 +33,7 @@ zuul:
       serviceId: sys-web-api
     repair-web-api: 
       path: /repair/**
-      stripPrefix: false
+      stripPrefix: true
       serviceId: repair-web-api
     #aek-fileserver-api: /api/upload/**
     aek-fileserver-api: 
