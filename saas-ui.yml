@@ -5,6 +5,7 @@ server:
   port: ${aek.saas-ui.port} 
   
 zuul:
+  prefix: /api
   routes:
     servlet-path: /zuul
     #ignoredServices: '*'
@@ -16,24 +17,27 @@ zuul:
     #aek-fileserver-api: /api/file/**
     
     assets-web-api: 
-      path: /api/assets/**
+#      path: /api/assets/**
+      path: /assets/**
       stripPrefix: true
       serviceId: assets-web-api
     auth-server: 
-      path: /api/api_v3/**
+#      path: /api/api_v3/**
+      path: /api_v3/**
       stripPrefix: true
       url: http://192.168.1.48:8085/apis/
     sys-web-api: 
-      path: /api/sys/**
+#      path: /api/sys/**
+      path: /sys/**
       stripPrefix: true
       serviceId: sys-web-api
     repair-web-api: 
-      path: /api/repair/**
+      path: /repair/**
       stripPrefix: true
       serviceId: repair-web-api
     #aek-fileserver-api: /api/upload/**
     aek-fileserver-api: 
-      path: /api/file/**
+      path: /file/**
       stripPrefix: true
       serviceId: aek-fileserver-api
       
