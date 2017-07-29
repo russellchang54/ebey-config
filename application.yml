@@ -137,3 +137,20 @@ feign-assets:
   name: assets-web-api
 feign-auth:
   name: auth-server
+  
+  
+  
+#application.yml
+zuul:
+  routes:
+    users:
+      path: /myusers/**
+      serviceId: users
+
+ribbon:
+  eureka:
+    enabled: false
+
+users:
+  ribbon:
+    listOfServers: example.com,google.com  
