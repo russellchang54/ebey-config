@@ -19,7 +19,7 @@ zuul:
     assets-web-api: 
 #      path: /api/assets/**
       path: /assets/**
-      stripPrefix: true
+      stripPrefix: false
       serviceId: assets-web-api
     auth-server: 
 #      path: /api/api_v3/**
@@ -29,16 +29,16 @@ zuul:
     sys-web-api: 
 #      path: /api/sys/**
       path: /sys/**
-      stripPrefix: true
+      stripPrefix: false
       serviceId: sys-web-api
     repair-web-api: 
       path: /repair/**
-      stripPrefix: true
+      stripPrefix: false
       serviceId: repair-web-api
     #aek-fileserver-api: /api/upload/**
     aek-fileserver-api: 
       path: /file/**
-      stripPrefix: true
+      stripPrefix: false
       serviceId: aek-fileserver-api
       
   max:
