@@ -28,7 +28,7 @@ eureka:
 spring:
   profiles: dev
   datasource:
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://mysqlcluster.aek.com:3306/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: '{cipher}b7f61d792f19149e5f37923ebba95fca46fa3c36a868d0eb059bd20548e4b63d'
     password: '{cipher}7aae8c470c2867e6eee1def34218a86c5a440a3a7db6ad5b1e2a99a728dd980d'
     driver-class: com.mysql.jdbc.Driver    
