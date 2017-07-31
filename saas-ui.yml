@@ -20,6 +20,7 @@ server:
   port: 8081
   
 zuul:
+  ribbon-isolation-strategy: THREAD
   prefix: /api
   routes:      
 #    ignoredServices: '*'
