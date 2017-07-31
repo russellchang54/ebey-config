@@ -64,7 +64,7 @@ zuul:
       url: http://${repair.hostname}:${repair.port}
     fileserver:
       path: /api/upload/**
-      stripPrefix: true
+      stripPrefix: false
       url: http://${fileserver.hostname}:${fileserver.port}
     browserfile:
       path: /api/file/**
