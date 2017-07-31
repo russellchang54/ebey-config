@@ -22,7 +22,7 @@ server:
 zuul:
   prefix: /api
   routes:      
-    ignoredServices: '*'
+#    ignoredServices: '*'
     assets:
       path: /assets/**
       stripPrefix: false
