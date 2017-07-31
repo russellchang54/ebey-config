@@ -28,7 +28,7 @@ zuul:
       stripPrefix: false
       serviceId: assets-web-api
     auth:
-      path: /api_v/**
+      path: /apis/**
       serviceId: auth-server
     sys-web:
       path: /sys/**
