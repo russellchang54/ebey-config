@@ -45,31 +45,31 @@ fileserver:
     contextPath: /
 
 zuul:
+  prefix: /api
   routes:      
+    ignoredServices: '*'
     assets:
-      path: /api/assets/**
-      stripPrefix: true
-      url: http://${assetsserver.hostname}:${assetsserver.port}
+      path: /assets/**
+      stripPrefix: false
+      serviceId: assets-web-api
     auth:
-      path: /api/api_v3/**
-      stripPrefix: true
-      url: http://${authserver.hostname}:${authserver.port}
+      path: /api_v3/**
+      serviceId: auth-server
     sys-web:
-      path: /api/sys/**
-      stripPrefix: true
-      url: http://${sys-web.hostname}:${sys-web.port}
+      path: /sys/**
+      stripPrefix: false
+      serviceId: sys-web-api
     repair:
-      path: /api/repair/**
-      stripPrefix: true
-      url: http://${repair.hostname}:${repair.port}
+      path: /repair/**
+      stripPrefix: false
+      serviceId: repair-web-api
     fileserver:
-      path: /api/upload/**
-      stripPrefix: true
-      url: http://${fileserver.hostname}:${fileserver.port}
+      path: /upload/**
+      stripPrefix: false
+      serviceId: aek-fileserver-api
     browserfile:
-      path: /api/file/**
-      stripPrefix: true
-      url: http://${fileserver.hostname}:${fileserver.port}
+      path: /file/**
+      serviceId: aek-fileserver-api
     servlet-path: /zuul      
   max:
     host:
