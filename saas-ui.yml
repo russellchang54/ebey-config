@@ -25,7 +25,7 @@ gateway:
  contextPath: /
 authserver:
     hostname: ${env.develop}
-    port: 18085
+    port: 8085
     contextPath: /apis/    
 assetsserver:
     hostname: ${env.develop}
