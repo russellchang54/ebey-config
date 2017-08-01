@@ -65,9 +65,12 @@ app:
 #  projectPath: 
 eureka:
   client:
+    preferSameZoneEureka: true
     serviceUrl:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
   instance:
+    metadataMap: 
+      zone: dev
     status-page-url-path: /swagger-ui.html
     #prefer-ip-address: true
 ---
