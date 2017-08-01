@@ -16,7 +16,7 @@ spring:
       min-idle: 0 #初始化连接数
 feign:
   name: auth-server
-  url: http://dev.aek.com:18085/
+  url: http://dev.aek.com:8085/
 feign-assets:
   name: assets-web-api
   url: http://dev.aek.com:9090/
@@ -68,9 +68,12 @@ email:
     url: http://dev.aek.com:8081
 eureka:
   client:
+    preferSameEureka: true
     serviceUrl:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
   instance:
+    metadataMap:
+      zone: dev
     status-page-url-path: /swagger-ui.html
 
 ---
