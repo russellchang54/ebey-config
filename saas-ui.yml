@@ -45,6 +45,7 @@ zuul:
       serviceId: aek-fileserver-api
     browserfile:
       path: /file/**
+      stripPrefix: false
       serviceId: aek-fileserver-api
     servlet-path: /zuul      
   max:
