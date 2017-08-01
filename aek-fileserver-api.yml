@@ -18,7 +18,10 @@ eureka:
   instance:
     status-page-url-path: /swagger-ui.html
     preferIpAddress: true 
+    metadataMap:
+      zone: dev
   client: 
+    preferSameZoneEureka: true
     serviceUrl: 
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
 ---
