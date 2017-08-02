@@ -39,6 +39,16 @@ aek56:
   registry:
     password: 'aek56.cc'
 
+jwt:
+  header: X-AEK56-Token
+  secret: develop.aek56.com
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+    
+
 eureka:
   instance:
     preferIpAddress: true
