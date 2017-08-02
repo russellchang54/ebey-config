@@ -44,15 +44,6 @@ db:
 druid: 
   filters: stat
   logType: log4j2
-
-jwt:
-  header: X-AEK56-Token
-  secret: aek56.com
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
 sms:
   usr: shebei
   authkey: 68fc8c8a5ac2677859e59a213cc4e01e
