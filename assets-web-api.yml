@@ -67,15 +67,6 @@ eureka:
     preferSameZoneEureka: true
     serviceUrl: 
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
- 
-jwt:
-  header: X-AEK56-Token
-  secret: develop.aek56.com
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
 ---
 spring: 
   profiles: test
