@@ -14,7 +14,7 @@ spring:
       max-idle: 8 #最大空闲连接数
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
-feign:
+feign-auth:
   name: auth-server
   url: http://dev.aek.com:8085/
   serviceId: auth-server
