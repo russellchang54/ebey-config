@@ -17,9 +17,11 @@ spring:
 feign-assets:
   name: assets-web-api
   url: http://dev.aek.com:9090/
+  serviceId: assets-web-api
 feign-sys:
   name: sys-web-api
   url: http://dev.aek.com:8090/
+  serviceId: sys-web-api
 server:
   port: 9099
 db: 
