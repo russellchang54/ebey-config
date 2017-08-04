@@ -17,9 +17,11 @@ spring:
 feign:
   name: auth-server
   url: http://dev.aek.com:8085/
+  serviceId: auth-server
 feign-assets:
   name: assets-web-api
   url: http://dev.aek.com:9090/
+  serviceId: assets-web-api
 
 server:
   port: 8090
