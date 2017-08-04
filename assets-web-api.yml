@@ -24,13 +24,16 @@ sys:
 feign-sys:
   name: sys-web-api
   url: http://dev.aek.com:8090/
+  serviceId: sys-web-api
 feign-fileserver:
   name: aek-fileserver-api
   url: http://dev.aek.com:8087/
+  serviceId: aek-fileserver-api
 feign-saasui: 
   name: saas-ui
   url: http://dev.aek.com:8081/
-
+  serviceId: saas-ui
+  
 server: 
   port: 9090
 db: 
