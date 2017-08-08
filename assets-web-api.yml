@@ -58,9 +58,6 @@ druid:
 eureka: 
   instance:
     status-page-url-path: /swagger-ui.html
-    preferIpAddress: true
-    ip-address: ${spring.cloud.client.ipAddress}
-    instance-id: ${spring.cloud.client.hostname}:${server.port}    
     metadataMap:
       zone: dev
   client: 
