@@ -72,43 +72,41 @@ eureka:
 ---
 
 spring:
-  profiles: test
+  profiles: local
   application:
-    name: sys-web-api
+    name: sys-web-api-local
   session:
     store-type: none
   redis: 
     host: redis.aek.com
     port: 6379
-    database: 10
+    database: 0
     timeout: 0
     pool:
       max-active: 8 #最大连接数
       max-idle: 8 #最大空闲连接数
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
-  cloud:
-    client:
-      hostname: ebey.aek.com
-      ipAddress: 192.168.1.54    
-feign:
+feign-auth:
   name: auth-server
-  url: ebey.aek.com:8085
+  url: http://dev.aek.com:8085/
+  serviceId: auth-server
 feign-assets:
   name: assets-web-api
-  url: http://ebey.aek.com:9090/
+  url: http://dev.aek.com:9090/
+  serviceId: assets-web-api
+
 server:
   port: 8090
-  
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6447/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev301
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/sd_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev101
     password: 16M089
   writer: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev301
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev101
     password: 16M089
   initialSize: 20
   maxActive: 40
@@ -121,15 +119,6 @@ db:
 druid: 
   filters: stat
   logType: log4j2
-
-jwt:
-  header: X-AEK56-Token
-  secret: aek56.com
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
 sms:
   usr: shebei
   authkey: 68fc8c8a5ac2677859e59a213cc4e01e
@@ -142,14 +131,13 @@ email:
   name: noreply@aek56.com
   password: aek.ser639
   redirect:
-    url: http://ebey.aek.com:8081
+    url: http://dev.aek.com:8081
 eureka:
   client:
+    preferSameEureka: true
     serviceUrl:
-      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
   instance:
+    metadataMap:
+      zone: local
     status-page-url-path: /swagger-ui.html
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30    
-    ip-address: ${spring.cloud.client.ipAddress}
-    instance-id: ${spring.cloud.client.hostname}:${server.port}      
