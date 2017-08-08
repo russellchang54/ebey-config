@@ -5,11 +5,7 @@ spring:
     url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: dev101
     password: 16M089
-    driver-class: com.mysql.jdbc.Driver
-  cloud:
-    client:
-      hostname: auth-server-dev
-      ipAddress: 192.168.1.57      
+    driver-class: com.mysql.jdbc.Driver  
   redis:
     #database: 0
     host: redis.aek.com
