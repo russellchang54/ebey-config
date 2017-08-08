@@ -66,37 +66,49 @@ eureka:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
 ---
 spring: 
-  profiles: test
+  profiles: local
   application: 
-    name: assets-web-api
+    name: assets-web-api-local
   session: 
     store-type: none
   redis: 
     host: redis.aek.com
     port: 6379
-    database: 10
+    database: 0
     timeout: 0
     pool:
       max-active: 8 #最大连接数
       max-idle: 8 #最大空闲连接数
       max-wait: -1 #最大等待时间
       min-idle: 0 #初始化连接数
-  cloud:
-    client:
-      hostname: ebey.aek.com
-      ipAddress: 192.168.1.54      
+  #cloud:
+    #client:
+      #hostname: assets-web-api-dev
 
+      #ipAddress: 192.168.3.52  
+
+sys: 
+feign-sys:
+  name: sys-web-api
+  serviceId: sys-web-api
+feign-fileserver:
+  name: aek-fileserver-api
+  serviceId: aek-fileserver-api
+feign-saasui: 
+  name: saas-ui
+  serviceId: saas-ui
+  
 server: 
   port: 9090
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6447/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev80a
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/assets_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev30a
     password: 16M089
   writer: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/assets_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev80a
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/assets_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev30a
     password: 16M089
   initialSize: 20
   maxActive: 40
@@ -110,34 +122,12 @@ druid:
   filters: stat
   logType: log4j2
 
-sys: 
-feign-sys:
-  name: sys-web-api
-  url: http://ebey.aek.com:8090/
-feign-fileserver:
-  name: aek-fileserver-api
-  url: http://ebey.aek.com:8087/
-feign-saasui: 
-  name: saas-ui
-  url: http://ebey.aek.com:8081/
-
 eureka: 
   instance:
-    preferIpAddress: true
     status-page-url-path: /swagger-ui.html
-    ip-address: ${spring.cloud.client.ipAddress}
-    instance-id: ${spring.cloud.client.hostname}:${server.port} 
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 30      
+    metadataMap:
+      zone: local
   client: 
+    preferSameZoneEureka: true
     serviceUrl: 
-      defaultZone: http://ebey.aek.com:19513/eureka/,http://ebey.aek.com:19514/eureka/
-
-jwt:
-  header: X-AEK56-Token
-  secret: aek56.com
-  expiration: 604800
-  route:
-    authentication:
-      path: auth
-      refresh: refresh
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
