@@ -17,8 +17,8 @@ spring:
   http:
   multipart:
     enabled:
-    max-file-size: 50MB
-    max-request-size: 50MB
+    maxFileSize: 50MB
+    maxRequestSize: 50MB
 
 # Define the port where the API gateway server would be running
 server:
