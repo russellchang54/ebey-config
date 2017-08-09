@@ -14,9 +14,9 @@ spring:
 #      hostname: API-Getway
 #      ipAddress: ${env.develop}   
 # The OAuth2 server definition that would be used to send the authorization requests to
- http:
+  http:
   multipart:
-   enabled:
+    enabled:
     max-file-size: 50MB
     max-request-size: 50MB
 
