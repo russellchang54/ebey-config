@@ -47,7 +47,11 @@ jwt:
     authentication:
       path: auth
       refresh: refresh
-    
+
+assets-web-api:
+  ribbon:
+    ConnectTimeout: 60000
+    ReadTimeout: 180000
 
 eureka:
   instance:
