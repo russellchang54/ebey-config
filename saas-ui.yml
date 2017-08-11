@@ -51,7 +51,7 @@ zuul:
     host:
       connections: 500
   host:
-    socket-timeout-millis: 60000
+    socket-timeout-millis: 180000
     connect-timeout-millis: 60000  
   sensitiveHeaders: 
 
@@ -63,10 +63,10 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 60000     
+            timeoutInMilliseconds: 180000     
 
 ribbon:
-  ReadTimeout: 60000
+  ReadTimeout: 180000
   ConnectTimeout: 60000
   MaxAutoRetries: 2
   MaxAutoRetriesNextServer: 1
