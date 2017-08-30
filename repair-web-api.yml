@@ -99,12 +99,12 @@ db:
   driverClassName: com.mysql.jdbc.Driver
   reader: 
     url: jdbc:mysql://mysqlcluster.aek.com:6447/repair2_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev10r
-    password: 16M089
+    username: root
+    password: Aek56.com
   writer: 
     url: jdbc:mysql://mysqlcluster.aek.com:6446/repair2_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev10r
-    password: 16M089
+    username: root
+    password: Aek56.com
   initialSize: 20
   maxActive: 40
   maxIdle: 20
