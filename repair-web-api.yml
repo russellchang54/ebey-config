@@ -70,6 +70,77 @@ eureka:
 ---
 
 spring:
+  application:
+    profiles: new_repair
+    name: repair-web-api
+  session:
+    store-type: none
+  redis: 
+    host: redis.aek.com
+    port: 6379
+    database: 0
+    timeout: 0
+    pool:
+      max-active: 8 #最大连接数
+      max-idle: 8 #最大空闲连接数
+      max-wait: -1 #最大等待时间
+      min-idle: 0 #初始化连接数
+feign-assets:
+  name: assets-web-api
+  url: http://dev.aek.com:9090/
+  serviceId: assets-web-api
+feign-sys:
+  name: sys-web-api
+  url: http://dev.aek.com:8090/
+  serviceId: sys-web-api
+server:
+  port: 9098
+db: 
+  driverClassName: com.mysql.jdbc.Driver
+  reader: 
+    url: jdbc:mysql://mysqlcluster.aek.com:6447/repair2_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev10r
+    password: 16M089
+  writer: 
+    url: jdbc:mysql://mysqlcluster.aek.com:6446/repair2_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: dev10r
+    password: 16M089
+  initialSize: 20
+  maxActive: 40
+  maxIdle: 20
+  minIdle: 1
+  maxWaitMillis: 60000
+  timeBetweenEvictionRunsMillis: 3000
+  minEvictableIdleTimeMillis: 300000
+  maxPoolPreparedStatementPerConnectionSize: 20
+druid: 
+  filters: stat
+  logType: log4j2
+
+sms:
+  usr: shebei
+  authkey: 68fc8c8a5ac2677859e59a213cc4e01e
+  psw: WMl9LyA2mpo8izpg
+  url: http://sms.aek56.com/api/
+  loginTpl: 49 #短信密码模板
+  codeTpl: 4 #验证码模板
+email: 
+  host: smtp.exmail.qq.com
+  name: noreply@aek56.com
+  password: aek.ser639
+eureka:
+  client:
+    preferSameZoneEureka: true
+    serviceUrl:
+      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
+  instance:
+    metadataMap:
+      zone: dev
+    status-page-url-path: /swagger-ui.html
+    
+---
+
+spring:
   profiles: test
   application:
     name: repair-web-api
