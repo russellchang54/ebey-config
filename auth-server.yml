@@ -2,9 +2,12 @@ spring:
   # DataSource Config
   profiles: dev
   datasource:
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
-    username: dev101
-    password: 16M089
+    #url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/sd_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
+    #username: dev101
+    #password: 16M089
+    username: root
+    password: Aek56.com
     driver-class: com.mysql.jdbc.Driver  
   redis:
     #database: 0
