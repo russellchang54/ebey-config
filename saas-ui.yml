@@ -46,6 +46,10 @@ zuul:
     browserfile:
       path: /file/**
       serviceId: aek-fileserver-api
+    diaowen:
+      path: /diaowen/**
+      stripPrefix: false
+      url: http://localhost:8080  
     servlet-path: /zuul      
   max:
     host:
@@ -159,11 +163,7 @@ zuul:
       serviceId: aek-fileserver-api
     browserfile:
       path: /file/**
-      serviceId: aek-fileserver-api
-    diaowen:
-      path: /diaowen/**
-      stripPrefix: false
-      url: http://localhost:8080      
+      serviceId: aek-fileserver-api      
     servlet-path: /zuul      
   max:
     host:
