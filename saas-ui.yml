@@ -20,12 +20,14 @@ server:
   port: 8081
   
 zuul:
-  ribbon-isolation-strategy: THREAD
   routes:
     diaowen:
       path: /diaowen/**
       stripPrefix: false
-      url: http://localhost:8080   
+      url: http://localhost:8080 
+  
+zuul:
+  ribbon-isolation-strategy: THREAD  
   prefix: /api
   routes:      
 #    ignoredServices: '*'
