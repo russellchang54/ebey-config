@@ -1,6 +1,6 @@
 spring:
   application:
-    profiles: dev1
+    profiles: dev
     name: repair-web-api
   session:
     store-type: none
