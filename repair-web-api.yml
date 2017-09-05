@@ -82,7 +82,7 @@ eureka:
 spring:
   application:
     profiles: new_repair
-    name: new_repair-web-api
+#    name: new_repair-web-api
   session:
     store-type: none
   redis: 
