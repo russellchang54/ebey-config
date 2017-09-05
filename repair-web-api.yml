@@ -99,7 +99,7 @@ feign-sys:
   url: http://dev.aek.com:8090/
   serviceId: sys-web-api
 server:
-  port: 9098
+  port: 19098
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
