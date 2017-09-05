@@ -1,6 +1,7 @@
 
 server:
-  port: 9099 
+  port: 19099 
+  
 spring:
   application:
     profiles: dev
