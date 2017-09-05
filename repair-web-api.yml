@@ -73,7 +73,9 @@ eureka:
     status-page-url-path: /swagger-ui.html
 server:
   port: 9099    
+
 ---
+
 spring:
   application:
     profiles: new_repair
@@ -99,7 +101,7 @@ feign-sys:
   url: http://dev.aek.com:8090/
   serviceId: sys-web-api
 server:
-  port: 19098
+  port: 9098
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
