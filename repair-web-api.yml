@@ -74,6 +74,7 @@ eureka:
     status-page-url-path: /swagger-ui.html
 
 ---
+
 spring:
   application:
     profiles: new_repair
