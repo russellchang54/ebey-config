@@ -142,6 +142,6 @@ eureka:
       defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/
   instance:
     metadataMap:
-      zone: dev
+      zone: dev1
     status-page-url-path: /swagger-ui.html
     
