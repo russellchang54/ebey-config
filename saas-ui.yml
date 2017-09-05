@@ -18,15 +18,6 @@ spring:
 # Define the port where the API gateway server would be running
 server:
   port: 8081
-  
-zuul:
-  routes:
-    diaowen:
-      path: /diaowen/**
-      stripPrefix: false
-      url: http://localhost:8080   
-
-  
 zuul:
   ribbon-isolation-strategy: THREAD  
   prefix: /api
