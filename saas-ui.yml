@@ -38,6 +38,10 @@ zuul:
       path: /repair/**
       stripPrefix: false
       serviceId: repair-web-api
+    newrepair:
+      path: /newrepair/**
+      stripPrefix: false
+      serviceId: new-repair-web-api
     fileserver:
       path: /upload/**
       stripPrefix: false
@@ -152,6 +156,10 @@ zuul:
       path: /repair/**
       stripPrefix: false
       serviceId: repair-web-api
+    newrepair:
+      path: /newrepair/**
+      stripPrefix: false
+      serviceId: new-repair-web-api
     fileserver:
       path: /upload/**
       stripPrefix: false
