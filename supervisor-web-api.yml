@@ -27,11 +27,11 @@ logging:
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6447/supervisor_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/supervisor_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: dev10s
     password: 16M089
   writer: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/supervisor_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/supervisor_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: dev10s
     password: 16M089
   initialSize: 20
@@ -99,11 +99,11 @@ logging:
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6447/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: dev30s
     password: 16M089
   writer: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/supervisor_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     username: dev30s
     password: 16M089
   initialSize: 20
