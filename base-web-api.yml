@@ -76,9 +76,9 @@ eureka:
 ---
 
 spring:
-  profiles: test
+  profiles: local
   application:
-    name: base-web-api
+    name: base-web-api-local
   session:
     store-type: none
   redis: 
@@ -107,13 +107,19 @@ server:
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6447/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev301
-    password: 16M089
+    #url: jdbc:mysql://mysqlcluster.aek.com:6447/sd_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/sd_feat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    #username: dev101
+    #password: 16M089
+    username: root
+    password: Aek56.com
   writer: 
-    url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    username: dev301
-    password: 16M089
+    #url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/sd_feat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    #username: dev101
+    #password: 16M089
+    username: root
+    password: Aek56.com
   initialSize: 20
   maxActive: 40
   maxIdle: 20
