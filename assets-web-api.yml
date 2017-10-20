@@ -86,7 +86,7 @@ spring:
   redis: 
     host: redis.aek.com
     port: 6379
-    database: 0
+    database: 10
     timeout: 0
     pool:
       max-active: 8 #最大连接数
