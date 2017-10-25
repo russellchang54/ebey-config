@@ -10,7 +10,7 @@ spring:
     password: Aek56.com
     driver-class: com.mysql.jdbc.Driver  
   redis:
-    #database: 0
+    database: 0
     host: redis.aek.com
     #password: # Login password of the redis server.
     port: 6379
