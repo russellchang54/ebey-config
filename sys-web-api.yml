@@ -137,6 +137,7 @@ sms:
   url: http://sms.aek56.com/api/
   loginTpl: 49 #短信密码模板
   codeTpl: 4 #验证码模板
+  codeTpl_zbzx: 95
 email: 
   host: smtp.exmail.qq.com
   name: noreply@aek56.com
