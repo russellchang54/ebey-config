@@ -34,10 +34,10 @@ zuul:
       path: /sys/**
       stripPrefix: false
       serviceId: sys-web-api
-    repair:
-      path: /repair/**
-      stripPrefix: false
-      serviceId: repair-web-api
+#    repair:
+#      path: /repair/**
+#      stripPrefix: false
+#      serviceId: repair-web-api
     newrepair:
       path: /newrepair/**
       stripPrefix: false
