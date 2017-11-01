@@ -1,7 +1,7 @@
 spring:
   profiles: dev
   application:
-    name: cms-web-api
+    name: qc-web-api
   session:
     store-type: none
   redis: 
@@ -29,13 +29,13 @@ db:
   driverClassName: com.mysql.jdbc.Driver
   reader: 
     #url: jdbc:mysql://mysqlcluster.aek.com:6447/sd_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    url: jdbc:mysql://192.168.1.135:3306/qc_feat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/qc_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     #username: dev101
     #password: 16M089
     username: root
     password: Aek56.com
   writer: 
-    url: jdbc:mysql://192.168.1.135:3306/qc_feat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/qc_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     #username: dev101
     #password: 16M089
     username: root
@@ -79,7 +79,7 @@ eureka:
 spring:
   profiles: local
   application:
-    name: sys-web-api-local
+    name: qc-web-api-local
   session:
     store-type: none
   redis: 
@@ -107,14 +107,14 @@ db:
   driverClassName: com.mysql.jdbc.Driver
   reader: 
     #url: jdbc:mysql://mysqlcluster.aek.com:6447/sd_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    url: jdbc:mysql://192.168.1.135:3306/sd_feat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/qc_feat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     #username: dev101
     #password: 16M089
     username: root
     password: Aek56.com
   writer: 
     #url: jdbc:mysql://mysqlcluster.aek.com:6446/sd_dev?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
-    url: jdbc:mysql://192.168.1.135:3306/sd_feat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    url: jdbc:mysql://192.168.1.135:3306/qc_feat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
     #username: dev101
     #password: 16M089
     username: root
