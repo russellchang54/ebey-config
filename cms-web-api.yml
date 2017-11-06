@@ -22,7 +22,11 @@ feign-assets:
   name: assets-web-api
   url: http://dev.aek.com:9090/
   serviceId: assets-web-api
-
+feign-sys:
+  name: sys-web-api
+  url: http://dev.aek.com:8090/
+  serviceId: sys-web-api
+  
 server:
   port: 8070
 db: 
@@ -79,7 +83,7 @@ eureka:
 spring:
   profiles: local
   application:
-    name: sys-web-api-local
+    name: cms-web-api-local
   session:
     store-type: none
   redis: 
@@ -100,9 +104,13 @@ feign-assets:
   name: assets-web-api
   url: http://dev.aek.com:9090/
   serviceId: assets-web-api
+feign-sys:
+  name: sys-web-api
+  url: http://dev.aek.com:8090/
+  serviceId: sys-web-api
 
 server:
-  port: 8090
+  port: 8070
 db: 
   driverClassName: com.mysql.jdbc.Driver
   reader: 
