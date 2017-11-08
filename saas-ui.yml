@@ -34,6 +34,10 @@ zuul:
       path: /sys/**
       stripPrefix: false
       serviceId: sys-web-api
+    cms-web:
+      path: /cms/**
+      stripPrefix: false
+      serviceId: cms-web-api
 #    repair:
 #      path: /repair/**
 #      stripPrefix: false
@@ -152,6 +156,10 @@ zuul:
       path: /sys/**
       stripPrefix: false
       serviceId: sys-web-api
+    cms-web:
+      path: /cms/**
+      stripPrefix: false
+      serviceId: cms-web-api
     repair:
       path: /repair/**
       stripPrefix: false
