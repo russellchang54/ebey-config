@@ -38,6 +38,10 @@ zuul:
       path: /cms/**
       stripPrefix: false
       serviceId: cms-web-api
+    qc-web:
+      path: /qc/**
+      stripPrefix: false
+      serviceId: qc-web-api
 #    repair:
 #      path: /repair/**
 #      stripPrefix: false
@@ -160,6 +164,10 @@ zuul:
       path: /cms/**
       stripPrefix: false
       serviceId: cms-web-api
+    qc-web:
+      path: /qc/**
+      stripPrefix: false
+      serviceId: qc-web-api
     repair:
       path: /repair/**
       stripPrefix: false
