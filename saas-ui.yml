@@ -63,8 +63,7 @@ eureka:
     instance-id: ${spring.cloud.client.hostname}:${server.port}    
   client: 
     serviceUrl: 
-      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/  
-
+      defaultZone: http://clock-builder.com:18887/eureka/
 
 jwt:
   header: X-AEK56-Token
