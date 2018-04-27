@@ -8,7 +8,7 @@ env:
   
   
 spring:
-  profiles: dev
+  profiles: default
   cloud:
     client:
       hostname: API-Getway
