@@ -6,8 +6,8 @@ env:
   develop: dev.aek.com
   test: ebey.aek.com
   
-management.endpoints.web.base-path=/
-management.endpoints.web.path-mapping.health=healthcheck
+#management.endpoints.web.base-path=/
+#management.endpoints.web.path-mapping.health=healthcheck
 
   
 spring:
