@@ -89,6 +89,9 @@ ribbon:
     enabled: true      
     
 management:
+ info:
+   git:
+     mode: full
  endpoints:
 #   health:
   #   show-details: always
