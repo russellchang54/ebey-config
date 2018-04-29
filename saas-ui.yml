@@ -9,6 +9,11 @@ env:
 #management.endpoints.web.base-path=/
 #management.endpoints.web.path-mapping.health=healthcheck
 
+management:
+	endpoints:
+		web:
+			exposure:
+				include: "*"
   
 spring:
   profiles: dev
