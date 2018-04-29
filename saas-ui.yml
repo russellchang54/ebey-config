@@ -2,18 +2,7 @@
 
 #refreshtest: '{cipher}2803a18f5c9d4276b1002fa1fc74c5cd7b228842de13308bcc102fc7d7c6e5d4'
 
-env:
-  develop: dev.aek.com
-  test: ebey.aek.com
-  
-#management.endpoints.web.base-path=/
-#management.endpoints.web.path-mapping.health=healthcheck
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
   
 spring:
   profiles: dev
