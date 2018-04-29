@@ -100,9 +100,7 @@ eureka:
   client: 
     preferSameZoneEureka: true
     serviceUrl: 
-      defaultZone: http://register-center:19512/eureka/,http://register-center:19511/eureka/     
-
-security:
+      defaultZone: http://register-center:18887/eureka/
   oauth2:
     sso:
       home:
