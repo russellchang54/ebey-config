@@ -90,8 +90,8 @@ ribbon:
     
 management:
  endpoints:
-   health:
-     show-details: always
+#   health:
+  #   show-details: always
    web:
      exposure:
        include: "*"      
