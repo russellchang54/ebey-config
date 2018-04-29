@@ -87,7 +87,12 @@ ribbon:
   MaxAutoRetriesNextServer: 1
   eureka:
     enabled: true      
+    
 management:
+ endpoints:
+   web:
+     exposure:
+       include: "*"      
  add-application-context-header: false
  security:
   enabled: false
