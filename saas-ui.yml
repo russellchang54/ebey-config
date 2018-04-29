@@ -5,7 +5,12 @@
 env:
   develop: dev.aek.com
   test: ebey.aek.com
-  
+management:
+  endpoints:
+    web:
+      base-path: /iris-mgr
+      path-mapping:
+        health: hcheck
   
 spring:
   profiles: dev
